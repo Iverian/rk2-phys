@@ -1,0 +1,50 @@
+\include{__preamble__}
+
+\begin{document}
+
+\paragraph{17}
+Квантовомеханическое среднее и его временная эволюция.\\
+
+По собственным функциям наблюдаемого оператора Вы можете разложить любую функцию из Гильбертова пространства, описывающую текущее состояние квантовой системы:
+
+\begin{gather*}
+	\psi (x) = \sum_nc_n\varphi_n(x)
+\end{gather*}
+
+Рассмотрим следующие выражения:
+\begin{enumerate}
+	\item $(\psi,\hat A \psi) = \left(\sum_mc_m\varphi_m,\sum_nc_na_n\varphi_n\right) = \sum_{mn}c_m^*c_na_n(\varphi_m,\varphi_n) = \sum_{mn}c_m^*c_na_n\delta_{mn} = \sum_m|c_m|^2a_m $
+	\item $(\psi,\psi) = \left(\sum_mc_m\varphi_m,\sum_nc_n\varphi_n\right) = \sum_{mn}c_m^*c_n(\varphi_m,\varphi_n) = \sum_{mn}c_m^*c_n\delta_{mn} = \sum_m|c_m|^2 $
+\end{enumerate}
+
+Квантовомеханическое среднее значение наблюдаемой A находится по формуле:
+\begin{gather*}
+	<A> = \sum_jP_{a_j}a_j = \frac{\sum_j|c_j|^2a_j}{\sum_p|c_p|^2} = \frac{(\psi,\hat{A}\psi)}{(\psi,\psi)}
+\end{gather*}
+Исследуем, как кв.мех. среднее эволюционирует во времени. Возьмем такую вектор функцию, которая нормирована на единицу,т.е
+\begin{gather*}
+	\vert\vert \psi(t_0,\vec{r})\vert\vert ^2 = 1 \Rightarrow\;  <A> = \frac{(\psi,\hat{A}\psi)}{(\psi,\psi)} = \frac{(\psi,\hat{A}\psi)}{\vert\vert\psi\vert\vert^2} = (\psi,\hat{A}\psi)
+\end{gather*}
+Теперь посмотрим как она эволюционирует во времени:
+\begin{gather*}
+	\frac{d}{dt}<A(t)> = \frac{d}{dt}\left(\psi(t,\vec{r}), \hat{A} \psi(t,\vec{r})\right) = \left(\frac{d}{dt}\psi,\hat{A}\psi\right)+\left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\left(\psi,\hat{A}\frac{d}{dt}\psi\right) = 
+\end{gather*}
+
+Вспомним, что  $\frac{d}{dt}\psi = \frac{1}{ih}\widehat{H}\psi$
+\begin{gather*}
+	= \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,\widehat{A}\widehat{H}\psi) - (\widehat{H}\psi,\widehat{A}\psi)\right] = 
+\end{gather*}
+Так как $\widehat{H}$ - эрмитов, то его можно переносить из ячейки в ячейку
+\begin{gather*}
+	= \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,\widehat{A}\widehat{H}\psi) - (\psi,\widehat{H}\widehat{A}\psi)\right] = \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,(\hat{A}\hat{H}-\hat{H}\hat{A})\psi)\right] =\\ = \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}(\psi,[\hat{A},\hat{H}]\psi)
+\end{gather*}
+Таким образом получаем:
+\begin{gather*}
+	\frac{d}{dt}<A(t)> = <\frac{d}{dt}\hat{A}>+\frac{1}{ih}<[\hat{A},\hat{H}]>
+\end{gather*}
+В случае если нет явной зависимости от времени, тогда
+\begin{gather*}
+	\frac{d}{dt}<A>=\frac{1}{ih}<[\hat{A},\hat{H}]>
+\end{gather*}
+Вдобавок заметим, если $[\hat{A},\hat{H}] = 0$ , то $\frac{d}{dt}<A> = 0 \Rightarrow \;\;<A>$ - интеграл движения
+\end{document}

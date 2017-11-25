@@ -1,0 +1,56 @@
+\input{__header__}
+
+\begin{document}
+	\paragraph{Э-08}
+	Сформулируйте полевую версию теоремы Нётер. Получите выражение, определяющее сохраняющийся нётеровский ток. Прокомментируйте её использование на примере канонического тензора энергии-импульса электромагнитного поля.
+	
+	\begin{theorem}[Нётер]
+		Инвариантность действия относительно некоторой непрерывной группы симметрии приводит к соответствующему закону сохранения.
+	\end{theorem}
+
+	Получим выражение для нётеровского тока.\\
+	Пусть задано действие 
+	$$\mathcal{A}=\int d^4x\mathcal{L}\left( \mathcal{A}^\alpha (x),\partial_\beta \mathcal{A}^\alpha(x)\right),\\
+	$$
+	где $d^4x=dt*d^3x,~~\partial_\beta=\frac{\partial}{\partial x^\beta}.$ Тогда, рассмотрев малые вариации $x\prime=x+\delta x, \mathcal{A}(x)\rightarrow\mathcal{A}\prime(x)$ получим вaриацию функционала действия:
+	\begin{gather*}
+	0=\delta \mathcal{A}\equiv
+	\int_{\Omega\prime}d^4x\prime\mathcal{L}\left(\mathcal{A}^{\alpha\prime}(x\prime),\partial_\beta\prime \mathcal{A}^{\alpha\prime}(x\prime)\right)-
+	 \int_\Omega d^4x\mathcal{L}\left( \mathcal{A}^\alpha (x),\partial_\beta \mathcal{A}^\alpha(x)\right)=\\
+	 \int_{\Omega\prime}d^4x\prime\left(\mathcal{L}(x)+\delta\mathcal{L}(x)\right)-
+	 \int_\Omega d^4x\mathcal{L}\left(x\right)=
+	 \int_\Omega d^4x\mathcal{L}(x)\partial_\mu\delta x^\mu+
+	 \int_\Omega d^4x\delta\mathcal{L}(x)=\\
+	 \int_\Omega d^4x\partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)+
+	 \int_\Omega d^4x\delta\mathcal{L}(x)=
+	 \left[\delta\mathcal{L}(x)=\tilde{\delta}\mathcal{L}(x)+
+	 \partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)\right]=\\
+	 \int_\Omega\tilde{\delta}\mathcal{L}(x)+(2?)
+	 \int_\Omega\partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)
+	 \end{gather*}
+	 
+	 Посмотрим на первое подынтегральное слагаемое:
+	 \begin{gather*}
+	 \tilde{\delta}\mathcal{L}(x)=
+	 \frac{\partial \mathcal{L}}{\partial \mathcal{A}}\tilde{\delta}\mathcal{A}(x)+
+	 \frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}(\partial_\mu\mathcal{A}(x))=\\
+	 \frac{\partial \mathcal{L}}{\partial \mathcal{A}}\tilde{\delta}\mathcal{A}(x)+
+	 \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)-
+	 \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\right)\tilde{\delta}\mathcal{A}(x)=\\
+	 0+ \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)\Rightarrow\\
+	 \int_\Omega d^4x\partial_\mu\left(\mathcal{L}(x)\delta x^\mu+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)=
+	 \left[\tilde{\delta}\mathcal{A}(x)=\delta\mathcal{A}(x)-\partial_\nu\mathcal{A}\delta x^\nu\right]=\\
+	 \int_\Omega d^4x\partial_\mu\mathcal{J}^\mu\Rightarrow
+	 \partial_\mu\mathcal{J}^\mu=0,
+	 \end{gather*}
+	 где $\mathcal{J}^\mu=\left(\mathcal{L}(x)\delta_\nu^\mu-\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A}(x))}\partial_\nu\mathcal{A}(x)\right)\delta x^\nu+\frac{\partial\mathcal{L}}{\partial(\partial_\mu\mathcal{A}(x))}\delta\mathcal{A}(x)$ - нётеровский ток\\
+	 
+	 Из его же лекций, в которых ничего нет и ничего не понятно следует, что 
+	 $$
+	 \mathcal{J}^\mu=-\mathcal{F}_\nu^\mu\epsilon^\nu,
+	 $$
+	 где канонический тензор энергии-импульса
+	 $$
+	 \mathcal{F}_\nu^\mu\equiv\frac{\partial \mathcal{L}}{\partial (\partial_\mu \mathcal{A})}\partial_\nu\mathcal{A}-\mathcal{L}\delta_\nu^\mu.
+	 $$
+\end{document}

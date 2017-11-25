@@ -1,0 +1,23 @@
+\include{__preamble__}
+
+\begin{document}
+\paragraph{34}
+Исходя из обобщённого соотношения неопределённостей Хайзенберга, получите соотношение неопределённостей «время-энергия». Объясните, почему название соотношения не вполне удачно.\\
+
+\textit{Обобщенное соотношение неопределенностей Хайзенберга:}
+$$\Delta A \Delta B \ge \left| \Big \langle \frac { \lbrack \widehat{A}, \widehat{B} \rbrack}{2} \Big \rangle \right| $$
+В обобщенное соотношение вместо $\widehat{B}$ подставим гамильтониан:
+ $$\Delta A \Delta E \ge \left| \Big \langle \frac { \lbrack \widehat{A}, \widehat{H} \rbrack}{2} \Big \rangle \right|$$
+
+Если $\widehat{A}$ не зависит от времени, то $\lbrack \widehat{A}, \widehat{H} \rbrack$ полностью определяет скорость эволюции во времени
+квантовомеханического среднего $A$:\\
+
+$$\frac{d}{dt}\langle A \rangle = \frac{1}{2 \hbar} \langle \lbrack \widehat{A}, \widehat{H} \rbrack \rangle \Rightarrow \left| \langle \widehat{A}, \widehat{H}\rangle \right| = \hbar \left| \frac{d}{dt}\langle A \rangle \right|$$
+
+Тогда: $\frac{\Delta A}{\left| \frac{d}{dt} \langle A \rangle \right| } \Delta E \ge \frac{\hbar}{2}$
+
+где $\frac{\Delta A}{\left| \frac{d}{dt} \langle A \rangle \right| } = \Sigma_A $ - характеристическое время эволюции статистического распределения А. Это время, необходимое для того, чтобы центр $\langle A \rangle$ распределения сместился на ширину распределения $\Delta A$ 
+
+Название соотношение не вполне удачно по причине того, что оно может запутать, так как под временем тут понимается характеристическое время эволюции. 
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\usepackage{amsmath,
+            amsthm,
+            amssymb
+}
+
+\usepackage{unicode-math,
+            tensor
+}
+
+\usepackage{wrapfig, 
+            hyperref,
+            multicol,
+            multirow,
+            tabularx,
+            booktabs,
+            makecell
+}
+
+\usepackage{}
+
+\geometry{a4paper,
+          total={170mm,255mm},
+          left=10mm,
+          top=15mm,
+}
+
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setkeys{russian}{babelshorthands=true}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}
+\DeclareSymbolFont{letters}{\encodingdefault}{\rmdefault}{m}{it}
+
+\newfontfamily{\cyrillicfont}{STIX Two Text} 
+\newfontfamily{\cyrillicfontrm}{STIX Two Text}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+\newfontfamily{\cyrillicfontsf}{STIX Two Text}
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\numberwithin{equation}{section}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\theoremstyle{definition}
+\newtheorem{definition}{Опр.}[section]
+\theoremstyle{remark}
+\newtheorem{statement}{Утв.}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}{Теор.}[section]
+
+\addto\captionsrussian{
+  \renewcommand{\figurename}{Рис.}
+  \renewcommand{\tablename}{Табл.}
+  \renewcommand{\proofname}{Док-во}
+}
+
+\graphicspath{{./img/}}
+\everymath{\displaystyle}
+
+\newcommand{\RNumb}[1]{\uppercase\expandafter{\romannumeral#1\relax}}
+\newcommand{\llabel}[1]{\label{\thesubsection:#1}}
+\newcommand{\lref}[1]{\ref{\thesubsection:#1}}

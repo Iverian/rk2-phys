@@ -1,0 +1,39 @@
+\input{__preamble__}
+
+\begin{document}
+	\paragraph{33}
+	Покажите ортогональность собственных функций, отвечающих различным собственным значениям эрмитова оператор (считайте, что собственные значения невырождены)\\
+	
+	\begin{definition}
+		Эрмитовым оператором наз-ся линейный и самосопряженный оператор.
+	\end{definition}
+	
+	СФ самосопряженного оператора $\hat F$ ортогональны, то есть:
+	\begin{gather*}
+	\int \psi^{\star}_m(x) \psi_n(x)dx = 0\text{ при }m\ne n
+	\end{gather*}
+	
+	Запишем два уравнения двух различных собственных значений $f_n$ и $f_m$, взяв от второго комплексное сопряжение:
+	\begin{gather*}
+	\hat{F}\psi_n(x)=f_n\psi_n(x),\\
+	\hat{F}^\star \psi^\star_m(x)=f_m\psi^\star_m(x).
+	\end{gather*}
+	
+	Первое ур-е умножим слева на $\psi^\star_m(x)$, второе - на $\psi_n(x)$, затем проинтегрируем и вычтем из первого ур-я второе:
+	\begin{gather*}
+	\int \psi^\star_m(x)\hat{F}\psi_n(x)dx - 
+	\int \psi_n(x)\hat{F}^\star \psi^\star_m(x)dx=
+	(f_n-f_m)\int \psi^\star_m(x)\psi_n(x)dx.
+	\end{gather*}
+	
+	Левая часть ур-я равна нулю, поскольку вычитаемое сводится к уменьшаемому после опреции транспонирования и использования св-ва самосопряжения оп-ра $\hat{F}$. Учитывая, что $f_n\ne f_m$, получаем:
+	\begin{gather*}
+	0=\int \psi^\star_m(x)\psi_n(x)dx=
+	\langle\psi_m\mid\psi_n\rangle
+	\end{gather*}
+	
+	Объединив результат с условием нормировки, можно написать так:
+	\begin{gather*}
+	\langle\psi_m\mid\psi_n\rangle=\delta_{mn}
+	\end{gather*}
+\end{document}

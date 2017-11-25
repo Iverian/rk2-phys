@@ -1,0 +1,90 @@
+\include{__header__}
+\begin{document}
+\paragraph{Э-10}
+Тензор Максвелла: определение и свойства. Уравнения Максвелла <<без источников>>.\\
+
+Здесь полагаем
+$$
+\partial_x f = \frac{\partial f}{\partial x}, \qquad
+\partial_\alpha f = \frac{\partial f}{\partial x^\alpha}, \qquad
+F_{\alpha\beta,\gamma} = \frac{\partial F_{\alpha\beta}}{\partial x^\gamma}
+$$
+
+\begin{definition}
+	Тензором Максвелла называется: 
+$$F_{\alpha\beta}=
+\begin{pmatrix}
+0 & -E_x & -E_y & -E_z\\
+E_x & 0 & B_z & -B_y\\
+E_y & -B_z & 0 & B_x\\
+E_z & B_y & -B_y & 0
+\end{pmatrix}$$
+\end{definition}
+
+где $\bar E$ - вектор напряжения электрического поля, а $\bar B$ - магнитного.
+Каждая компонента считается как:
+$$
+F_{\alpha\beta}=\frac{\partial A_\beta}{\partial x^{\alpha}}
+               -\frac{\partial A_\alpha}{\partial x^{\beta}},
+$$
+где $A$ - действие.
+\begin{gather}
+\begin{cases}
+	-E_x=F_{01}=\frac{\partial A_1}{\partial x^{0}}-\frac{\partial A_0}{\partial x^{1}}\\
+	-E_y=F_{02}=\frac{\partial A_2}{\partial x^{0}}-\frac{\partial A_0}{\partial x^{2}}\\
+	-E_z=F_{03}=\frac{\partial A_3}{\partial x^{0}}-\frac{\partial A_0}{\partial x^{3}}
+\end{cases}
+\end{gather}
+
+откуда $\bar{E}=-\frac{\partial\bar{ A}}{\partial t}-\nabla\varphi$, где $\varphi= A^0$ - нулевая компонента 4-вектора, $\nabla$- оператор Гамильтона.
+\begin{gather}
+	\begin{cases}
+		B_x=F_{23}=\frac{\partial A_3}{\partial x^{2}}-\frac{\partial A_2}{\partial x^{3}}\\
+		-B_y=F_{13}=\frac{\partial A_3}{\partial x^{1}}-\frac{\partial A_1}{\partial x^{3}}\\
+		B_z=F_{12}=\frac{\partial A_2}{\partial x^{1}}-\frac{\partial A_1}{\partial x^{2}}
+	\end{cases}
+\end{gather}
+откуда $\bar{B}=\nabla\times\bar{ A}$.
+
+\textbf{Свойства тензора Максвелла}
+\begin{enumerate}
+\item Антисимметричность: $F_{\alpha\beta}=-F_{\beta\alpha}$
+\item При калибровочном преобразовании $A_0$ , компоненты тензора Максвелла остаются неизменными , $\bar{B}=const, \bar{E}=const$.
+\begin{proof}
+Калибровочное преобразование имеет вид:
+\begin{gather*}
+	 A_\alpha\to A'_\alpha= A_\alpha+\frac{\partial f}{\partial x^\alpha}
+\end{gather*}
+преобразуем тензор Максвелла:
+\begin{gather*}
+F_{\alpha\beta}\to F'_{\alpha\beta} =
+\partial_\alpha A'_\beta - \partial_\beta A'_\alpha =
+\partial_\alpha A_\beta + \partial_\alpha\partial_\beta f - \partial_\beta A_\alpha-\partial_\beta\partial_\alpha f=
+F_{\alpha\beta}.
+\end{gather*}
+\end{proof}
+
+\end{enumerate}
+
+\begin{statement}
+Тензор $\Phi_{\alpha\beta\gamma}=F_{\alpha\beta,\gamma}+F_{\gamma\alpha,\beta}+F_{\beta\gamma,\alpha}$ = 0.
+\end{statement}
+\begin{proof}
+\begin{gather}
+\begin{cases}
+\Phi_{012}=F_{01,2}+F_{20,1}+F_{12,0}=-\partial_y E_x+\partial_x E_y + \partial_t B_z=0\\
+\Phi_{013}=F_{01,3}+F_{30,1}+F_{13,0}=-\partial_z E_x+\partial_x E_z - \partial_t B_y=0\\
+\Phi_{023}=F_{02,3}+F_{30,2}+F_{23,0}=-\partial_z E_y+\partial_y E_z + \partial_t B_x=0\\
+\Phi_{123}=F_{12,3}+F_{31,2}+F_{23,1}=\partial_z E_z+\partial_y E_y + \partial_x B_x=0
+\end{cases}
+\end{gather}
+\end{proof}
+Откуда получаем уравнения Максвелла <<без источников>>:
+\begin{gather}
+\begin{cases}
+	\nabla\times\bar{E}=-\partial_t\bar{B}\\
+	\nabla\bar{B}=0
+\end{cases}
+\end{gather}
+
+\end{document}

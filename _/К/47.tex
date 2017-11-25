@@ -1,0 +1,22 @@
+\include{__preamble__}
+
+\begin{document}
+\paragraph{47}
+Покажите, что переход от одного представления к другому производится с помощью унитарного преобразования.\\
+
+\begin{definition}
+Оператор $\hat{\Omega}$ называется унитарным, если $\hat{\Omega}^+=\hat{\Omega}^{-1}$
+\end{definition}
+
+Рассмотрим кет-векторы $\left|v\right>$ и $\left|w\right>$:
+
+$$\left|v^{'}\right> = \hat{\Omega}\left|v\right>$$
+$$\left|w^{'}\right> = \hat{\Omega}\left|w\right>$$
+$$\left<w^{'}\right| = \left<w\right|\hat{\Omega}^{+}$$
+
+Так как $\hat{\Omega}$ - унитарный оператор, то $\hat{\Omega}^{+}\hat{\Omega} = 1$.
+Следовательно:
+
+$$\left<w^{'}\vert v^{'}\right> = \left<w\vert\hat{\Omega}^{+}\hat{\Omega}\vert v\right> = \left<w\vert v\right>$$
+
+\end{document}

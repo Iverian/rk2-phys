@@ -1,0 +1,71 @@
+\include{__preamble__}
+
+\begin{document}
+	
+\paragraph{5.}
+Энергетический спектр квантомеханического гармонического осциллятора.\\
+
+Рассмотрим классический гармонический осциллятор: его полная механическая энергия примет вид
+\begin{gather*}
+E = \frac{kx^2}{2}+\frac{p^2}{2m},
+\end{gather*}
+для перехода к квантовому аналогу заменим жесткость пружины $k$ (какие еще пружины в микромире?) на ее выражение через собственную частоту $\omega$: $k=m\omega^2$, теперь по аналогии с классическим выражением запишем квантовомеханический гамильтониан (оператор полной энергии системы):
+\begin{gather*}
+\hat{H} = \frac{m\omega^2\hat{x}^2}{2}+\frac{\hat{p}^2}{2m}
+\end{gather*}
+Теперь для нахождения энергетического спектра нужно найти собственные значения $\hat{H}$:
+\begin{gather*}
+\hat{H}|v\rangle = E|v\rangle
+\end{gather*}
+Для этого введем вспомогательный оператор (\textit{оператор числа элементарный возбуждений}) $\hat{n}=\hat{b}^\dagger\hat{b}$, где $\hat{b}$ такой, что $[\hat{b},\hat{b}^\dagger]=1$.
+
+Заметим, что гамильтониан $\hat{H}$ можно выразить через оператор $\hat{n}$, положим:
+\begin{gather*}
+\hat{b} = \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + i\sqrt{\frac{1}{2m\omega\hbar}}\hat{p}
+\end{gather*}
+Т.к. $\hat{x}$ и $\hat{p}$ эрмитово самосопряженные, то
+\begin{gather*}
+\hat{b} = \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - i\sqrt{\frac{1}{2m\omega\hbar}}\hat{p}
+\end{gather*}
+Проверим $[\hat{b},\hat{b}^\dagger]=1$:
+\begin{gather*}
+[\hat{b},\hat{b}^\dagger]
+=
+\left.
+-\frac{i}{2\hbar}[\hat{x},\hat{p}]+\frac{i}{2\hbar}[\hat{p},\hat{x}]
+\right|_{[\hat{x},\hat{p}]=-[\hat{p},\hat{x}]}
+=
+\left.
+-\frac{i}{\hbar}[\hat{x},\hat{p}]
+\right|_{[\hat{x},\hat{p}]=i\hbar}
+=
+1
+\end{gather*}
+Оператор $\hat{n}$ примет вид:
+\begin{gather*}
+\hat{n}=\hat{b}^\dagger\hat{b}=\frac{m\omega\hat{x}^2}{2\hbar}+\frac{\hat{p}^2}{2m\omega\hbar}-\frac{1}{2}
+\end{gather*}
+Тогда получим:
+\begin{gather*}
+\hbar\omega\left(\hat{n}+\frac{1}{2}\right)
+=
+\frac{m\omega^2\hat{x}^2}{2}+\frac{\hat{p}^2}{2m}
+=
+\hat{H}
+\end{gather*}
+Ключевое свойство оператора $\hat{n}$: его собственные значения являются натуральными числами, обозначим $|n\rangle$ -- СФ оператора $\hat{n}$, отвечающая СЗ $n$. Следовательно:
+\begin{gather*}
+\hat{H}|n\rangle
+=
+\hbar\omega\left(\hat{n}+\frac{1}{2}\right)|n\rangle
+=
+\hbar\omega\left(n+\frac{1}{2}\right)|n\rangle
+=
+E_n|n\rangle
+\end{gather*}
+Т.е. собственные функции оператора $\hat{H}$ совпадают с СФ $\hat{n}$, а его собственные значения (стационарные значения энергии осциллятора)
+$$
+\forall n\in\mathbb{N}\cup\{0\}\colon E_n=\hbar\omega\left(n+\frac{1}{2}\right)
+$$
+
+\end{document}

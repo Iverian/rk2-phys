@@ -1,0 +1,54 @@
+\include{__header__}
+
+\begin{document}
+
+\paragraph{Э-03}
+Найдите правила преобразования компонент электрического и магнитного полей при переходе от одной ИСО к другой (относительная скорость направлена вдоль оси $OY$). Какие комбинации электрического и магнитного полей при бусте вдоль $OY$ не изменяются?\\
+
+Так как нам задан буст - $OY$, то матрица преобразований будет выглядить след. образом:
+\begin{gather*}
+	Y^\alpha_\beta = \begin{pmatrix}
+	\gamma & 0 & -\gamma v & 0 \\
+	0 & 1 & 0 & 0 \\         
+	-\gamma v & 0 & \gamma & 0 \\
+	0 & 0 & 0 & 1
+	\end{pmatrix}
+\end{gather*}
+Преобразование из одной ИСО в другую осуществляется по следующей формуле:
+\begin{gather*}
+'F^{\alpha \beta} = Y^\alpha_\gamma Y^\beta_\delta F^{\gamma \delta}
+\end{gather*}
+где, контравариантный тензор $F^{ik}$ выглядит след. образом: 
+\begin{gather*}
+F^{ik} = \begin{pmatrix}
+0 & -E_x & -E_y & -E_z \\
+E_x & 0 & -B_z & B_y \\         
+E_y & B_z & 0 & -B_x \\
+E_z & -B_y & B_x & 0
+\end{pmatrix}
+\end{gather*}
+\begin{gather*}
+'E_x ='F^{01} = Y^0_\gamma Y^1_\delta F^{\gamma \delta} = Y^0_0 Y^1_0 F^{00}+Y^0_0 Y^1_1 F^{01}+Y^0_1 Y^1_0 F^{10}+Y^0_1 Y^1_1 F^{11}+Y^0_0 Y^1_2 F^{02}+Y^0_2 Y^1_0 F^{20}+Y^0_0 Y^1_3 F^{03}+\\+Y^0_3 Y^1_0 F^{30}+Y^0_1 Y^1_2 F^{12}+Y^0_2 Y^1_1 F^{21}+Y^0_3 Y^1_1 F^{31}+Y^0_2 Y^1_3 F^{23}+Y^0_3 Y^1_2 F^{32}+Y^0_2 Y^1_2 F^{22}+Y^0_3 Y^1_3 F^{33}=\\
+=Y^0_0 Y^1_1 F^{01}+Y^0_2 Y^1_1 F^{21}=\gamma \cdot 1 \cdot E_x+(-\gamma v)\cdot 1 \cdot (-B_z) = \gamma (E_x+vB_z)
+\end{gather*}
+\begin{gather*}
+'E_y ='F^{02} = Y^0_\gamma Y^2_\delta F^{\gamma \delta} = Y^0_0 Y^2_0 F^{00}+Y^0_0 Y^2_1 F^{01}+Y^0_1 Y^2_0 F^{10}+Y^0_1 Y^2_1 F^{11}+Y^0_0 Y^2_2 F^{02}+Y^0_2 Y^2_0 F^{20}+Y^0_0 Y^2_3 F^{03}+\\+Y^0_3 Y^2_0 F^{30}+Y^0_1 Y^2_2 F^{12}+Y^0_2 Y^2_1 F^{21}+Y^0_3 Y^2_1 F^{31}+Y^0_2 Y^2_3 F^{23}+Y^0_3 Y^2_2 F^{32}+Y^0_2 Y^2_2 F^{22}+Y^0_3 Y^2_3 F^{33}=\\
+=Y^0_0 Y^2_2 F^{02}+Y^0_2 Y^2_0 F^{20}=\gamma \cdot \gamma \cdot E_z+(-\gamma v)(-\gamma v)(-E_y) = E_y
+\end{gather*}
+\begin{gather*}
+'E_z ='F^{03} = Y^0_\gamma Y^3_\delta F^{\gamma \delta} = Y^0_0 Y^3_0 F^{00}+Y^0_0 Y^3_1 F^{01}+Y^0_1 Y^3_0 F^{10}+Y^0_1 Y^3_1 F^{11}+Y^0_0 Y^3_2 F^{02}+Y^0_2 Y^3_0 F^{20}+Y^0_0 Y^3_3 F^{03}+\\+Y^0_3 Y^3_0 F^{30}+Y^0_1 Y^3_2 F^{12}+Y^0_2 Y^3_1 F^{21}+Y^0_3 Y^3_1 F^{31}+Y^0_2 Y^3_3 F^{23}+Y^0_3 Y^3_2 F^{32}+Y^0_2 Y^3_2 F^{22}+Y^0_3 Y^3_3 F^{33}=\\
+=Y^0_0 Y^3_3 F^{03}+Y^0_2 Y^3_3 F^{23}=\gamma \cdot 1 \cdot E_z+(-\gamma v)\cdot 1 \cdot B_x = \gamma(E_z-vB_x)
+\end{gather*}
+\begin{gather*}
+'B_x ='F^{23} = Y^2_\gamma Y^3_\delta F^{\gamma \delta} = Y^2_0 Y^3_0 F^{00}+Y^2_0 Y^3_1 F^{01}+Y^2_1 Y^3_0 F^{10}+Y^2_1 Y^3_1 F^{11}+Y^2_0 Y^3_2 F^{02}+Y^2_2 Y^3_0 F^{20}+Y^2_0 Y^3_3 F^{03}+\\+Y^2_3 Y^3_0 F^{30}+Y^2_1 Y^3_2 F^{12}+Y^2_2 Y^3_1 F^{21}+Y^2_3 Y^3_1 F^{31}+Y^2_2 Y^3_3 F^{23}+Y^2_3 Y^3_2 F^{32}+Y^2_2 Y^3_2 F^{22}+Y^2_3 Y^3_3 F^{33}=\\
+=Y^2_0 Y^3_3 F^{03}+Y^2_2 Y^3_3 F^{23}=(-\gamma v)\cdot 1 \cdot E_z+\gamma \cdot 1 \cdot B_x=\gamma (B_x-vE_z)
+\end{gather*}
+\begin{gather*}
+'B_y ='F^{31} = Y^3_\gamma Y^1_\delta F^{\gamma \delta} = Y^3_0 Y^1_0 F^{00}+Y^3_0 Y^1_1 F^{01}+Y^3_1 Y^1_0 F^{10}+Y^3_1 Y^1_1 F^{11}+Y^3_0 Y^1_2 F^{02}+Y^3_2 Y^1_0 F^{20}+Y^3_0 Y^1_3 F^{03}+\\+Y^3_3 Y^1_0 F^{30}+Y^3_1 Y^1_2 F^{12}+Y^3_2 Y^1_1 F^{21}+Y^3_3 Y^1_1 F^{31}+Y^3_2 Y^1_3 F^{23}+Y^3_3 Y^1_2 F^{32}+Y^3_2 Y^1_2 F^{22}+Y^3_3 Y^1_3 F^{33}=\\
+=Y^3_3 Y^1_1 F^{31}=1\cdot 1 \cdot B_y= B_y
+\end{gather*}
+\begin{gather*}
+'B_z ='F^{12} = Y^1_\gamma Y^2_\delta F^{\gamma \delta} = Y^1_0 Y^2_0 F^{00}+Y^1_0 Y^2_1 F^{01}+Y^1_1 Y^2_0 F^{10}+Y^1_1 Y^2_1 F^{11}+Y^1_0 Y^2_2 F^{02}+Y^1_2 Y^2_0 F^{20}+Y^1_0 Y^2_3 F^{03}+\\+Y^1_3 Y^2_0 F^{30}+Y^1_1 Y^2_2 F^{12}+Y^1_2 Y^2_1 F^{21}+Y^1_3 Y^2_1 F^{31}+Y^1_2 Y^2_3 F^{23}+Y^1_3 Y^2_2 F^{32}+Y^1_2 Y^2_2 F^{22}+Y^1_3 Y^2_3 F^{33}=\\
+=Y^1_1 Y^2_0 F^{10}+Y^1_1 Y^2_2 F^{12} = 1\cdot (-\gamma v)(-E_x)+1\cdot \gamma \cdot B_z = \gamma (B_z+vE_x)
+\end{gather*}
+\end{document}

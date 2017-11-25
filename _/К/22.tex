@@ -1,0 +1,85 @@
+\include{__preamble__}
+
+\begin{document}
+\paragraph{22}
+Стационарное уравнение Шредингера. Рассмотрите задачу о движении электрона в одномерном потенциале, представляющем собой ступеньку бесконечной ширины.
+
+\begin{definition}
+	Стционарное уравнение Шредингера: 
+	\begin{gather}
+	\llabel{shred}
+	\hat{H}\psi(\vec{r})=\varepsilon\psi(\vec{r}), 
+	\end{gather}
+	где $\hat{H}=\frac{\hat{p}}{2m}+U(t,\vec{r})$ - гамильтониан или оператор полной энергии, $\psi(\vec{r})$ - волновая функция, $\varepsilon$ - некая константа,  отвечающая собственным значениям оператора полной энергии.
+\end{definition}
+
+Рассмотрим потенциальный порог бесконечной ширины.
+
+
+$$
+v(x)=
+\left\{
+\begin{gathered}
+0\hfill ,x<0 (I - ground)\\
+V_{0}\hfill, x\ge 0 (II - ground)\\
+\end{gathered}
+\right.
+$$
+
+В классической механике: если $\varepsilon<V_{0}$, (U- потенциальная энергия частицы) то движение возможно только при x<0, если $\varepsilon>V_{0}$, то движение возможно всюду, но $T_{II}<T_{I}$, T- энергия.
+
+\textbf{1. Рассмотрим  $\varepsilon>V_{0}$ }
+
+1.1 Область I (x<0)
+
+\begin{gather}
+\llabel{movi1}
+\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+\varepsilon\psi=0
+\end{gather}
+
+\begin{gather}
+\llabel{movi2}
+\frac{d^{2}\psi}{dx^{2}}+k_{1}^{2}\psi=0,
+\end{gather}
+где $k_{1}=\frac{\sqrt{2m\varepsilon}}{\hbar}$.
+
+Тогда волновая функция движения электрона в первой области:
+
+\begin{gather}
+\llabel{movi3}
+\psi_{I}=A_{1}e^{9k_{1}x}+B_{1}e^{-9k_{1}x}.
+\end{gather}
+
+1.2 Область II(x>0)
+
+
+\begin{gather}
+\llabel{movi5}
+\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+(\varepsilon-V_{0})\psi=0
+\end{gather}
+
+\begin{gather}
+\llabel{movi6}
+\frac{d^{2}\psi}{dx^{2}}+k_{2}^{2}\psi=0,
+\end{gather}
+где $k_{2}=\frac{\sqrt{2m(\varepsilon-V_{0})}}{\hbar}$.
+
+Тогда волновая функция движения электрона во второй  области:
+
+\begin{gather}
+\llabel{movi7}
+\psi_{II}=A_{21}e^{9k_{2}x}+B_{2}e^{-9k_{2}x}.
+\end{gather}
+
+Если электрон движется слева направо, а источника электрона на $+\infty$ нет, то $B_{1}=0, B_{2}=0$. Если справа налево, то  $A_{1}=0, A_{2}=0$
+
+\textbf{1. Рассмотрим  $\varepsilon<V_{0}$ }
+1.1. Область I (x<0)
+
+Также как и в пункте 1.
+
+
+1.2 Область II(x>0)
+
+Тоже самое , только $(\varepsilon-V_{0})<0$ и значит  $k_{2}=\frac{\sqrt{2m(V_{0}-\varepsilon)}}{\hbar}$.
+\end{document}

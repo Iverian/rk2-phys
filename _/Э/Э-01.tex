@@ -1,0 +1,26 @@
+\input{__header__}
+
+\begin{document}
+	\paragraph{Э-01}
+	Исходя из требования калибровочной симметрии, получите закон сохранения электрического заряда.
+	
+	Из теоремы Нётер и калибровочной симметрии получаем:
+	$$
+	\partial_\mu\mathcal{J}^\mu = 0 ,
+	$$
+	где $\mathcal{J}^\mu$ - Нётеровский ток. Распишем покомпонентно и проинтегрируем по объёму:
+	$j^0$ - плотность заряда, $\vec j$ - плотность потока заряда.
+	\begin{flalign*}
+	\partial_t j^0+\nabla\vec j&=0
+	\Rightarrow
+	\partial_t j^0=-\nabla\vec j
+	\Rightarrow\\
+	\int\partial_t j^0~dV&=-\int\nabla\vec j~dV
+	\Rightarrow\\
+	\partial_t\int j^0~dV&=-\oint\vec j\vec n~dS
+	\Rightarrow\\
+	\partial_t q&=-\oint\vec j\vec n~dS.
+	\end{flalign*}
+	
+	Это означает, что заключенный в объёме зарядможет меняться только за счёт потока через охваченную этот объём поверхность. Если же он не выходит то $\partial_t q=0 \Rightarrow q=const.$
+\end{document}

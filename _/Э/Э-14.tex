@@ -1,0 +1,114 @@
+% возьмите __header__ из папки вопросы для преднастройки документа
+\input{__header__}
+
+\begin{document}
+\paragraph{Э-14}
+Выпишите действие для заряженной частицы в электромагнитном поле. Обсудите следствия его лоренцевой и калибровочной симметрий. Воспользуйтесь принципом экстремального действия, чтобы получить выражение, определяющее 4-силу Лоренца.\\
+
+Действие для заряда в электромагнитном поле имеет вид
+\begin{gather*}
+	S = \int_{a}^{b}(-mcds - \frac{e}{c}A_idx^i).
+\end{gather*}
+\textbf{Лоренцева сила}
+Уравнения движения заряда в заданном электромагнитном поле получаются варьированием действия, т.е. даются уравнениями Лагранжа
+\begin{gather}
+	\label{e-14-ur}
+	\frac{d}{dt}\frac{\partial L}{\partial v} = \frac{\partial L}{\partial \tau},
+\end{gather}
+где L определяется формулой
+\begin{gather*}
+	L = -mc^2\sqrt{1 - \frac{v^2}{c^2}} + \frac{e}{c}A\textnormal{v} - e\varphi.
+\end{gather*}
+Производная $\partial L/\partial\textnormal{v}$ есть обобщённый импульс частицы
+\begin{gather*}
+	P = \frac{m\textnormal{v}}{\sqrt{1-\frac{v^2}{c^2}}} + \frac{e}{c}A = p + \frac{e}{c}A.
+\end{gather*}
+Далее пишем:\\
+\begin{gather*}
+ \frac{\partial L}{\partial \tau} \equiv \triangledown L = \frac{e}{c}grad A\textnormal{v} - e grad \varphi.
+\end{gather*}
+Но по известной формуле векторного анализа
+\begin{gather*}
+	grad ab = (a\triangledown)b + (b\triangledown)a + [brot a] + [arot b],
+\end{gather*}
+где $a$ и $b$ - любые два вектора. Применяя эту формулу к $A\textnormal{v}$ и помня, что дифференцирование по $r$ производится при постоянном $\textnormal{v}$, находим:
+\begin{gather*}
+	\frac{\partial L}{\partial\tau} = \frac{e}{c}(\textnormal{v}\triangledown)A + \frac{e}{c}[\textnormal{v}rotA] - egrad\varphi.
+\end{gather*}
+Уравнения Лагранжа, следовательно, имеют вид
+\begin{gather*}
+	\frac{d}{dt}(p + \frac{e}{c}A) = \frac{e}{c}(\textnormal{v}\triangledown)A + \frac{e}{c}[\textnormal{v}rotA] - egrad\varphi.
+\end{gather*}
+Но полный дифференциал $\frac{dA}{dt}dt$ складывается из двух частей: из изменения $\frac{\partial A}{\partial t}dt$ векторного потенциала со временем в данной точке пространства и из изменения при переходе от одной точки пространства к другой на расстояние $dr$. Эта вторая часть равна $(dr\triangledown)A$. Таким образом,
+\begin{gather*}
+	\frac{dA}{dt} = \frac{\partial A}{\partial t} + (\textnormal{v}\triangledown)A.
+\end{gather*}
+Подставляя это в предыдущее уравнение, получаем:
+\begin{gather}
+	\label{e-14-ur1}
+	\frac{dp}{dt} = -\frac{e}{c}\frac{\partial A}{\partial t} - egrad\varphi + \frac{e}{c}[\textnormal{v}rotA].
+\end{gather}
+Это и есть уравнение движения частицы в электромагнитном поле. Слева стоит производная от импульса частицы по времени. Следовательно, выражение в правой части $\ref{e-14-ur1}$ есть сила, действующая на заряд в электромагнитном поле. Мы видим, что эта сила состоит из двух частей. Первая часть(первый и второй члены в правой части) не зависит от скорости частицы. Вторая часть (третий член) зависит от этой скорости: пропорциональна величине скорости и перпендикулярна к ней.
+Силу первого рода, отнесённую к заряду, равному единице, называют  напряжённостью электрического поля; обозначим её посредством $E$. Итак, по определению
+\begin{gather}
+	\label{e-14-ur2}
+	E = -\frac{1}{c}\frac{\partial A}{\partial t} - grad \varphi.
+\end{gather}
+Множитель при скорости, точнее при $\textnormal{v}/c$, в силе второго рода, действующей на единичный заряд, называют напряжённостью магнитного поля; обозначим её через $H$. Итак, по определению,
+\begin{gather*}
+	\label{e-14-ur3}
+	H = rot A.
+\end{gather*}
+Если в электомагнитном поле $E\ne0$, а $H=0$, то говорят об электрическом поле; если же $E=0$, а $H\ne0$, то поле называют магнитным. 
+Уравнение движения заряда в электромагнитном поле можно теперь написать в виде
+\begin{gather*}
+	\frac{dp}{dt} = eE + \frac{e}{c}[\textnormal{v}H].
+\end{gather*}
+стоящее справа выражение носит название лоренцевой силы\\
+
+Получение лоренцевой силы по Никифорову\\
+\begin{gather*}
+	0 = \delta \quad^{\underset{int}{prt}}\mathcal{A}=
+	-m\int\delta dr-q\int\delta\mathcal{A}
+_\alpha dx^\alpha - q\int\mathcal{A}_\alpha\delta dx^\alpha =
+\int(mu_\alpha-q\mathcal{A}_\alpha)\delta x^\alpha|^f_i - \int\delta x^\alpha d(mu_\alpha-q\mathcal{A}_\alpha)-q\int\delta\mathcal{A}_\alpha dx^\alpha = -\int\delta x^\alpha m\frac{du_\alpha}{dr}dr+\int\delta x^\alpha q\partial_\beta\mathcal{A}_\alpha dx^\beta\frac{dr}{dr}-\int q\partial\mathcal{A}_\alpha\delta x^\beta dx^\alpha=\int dr\delta x^\alpha[-m\frac{du_\alpha}{dr}+q(\partial_\alpha\mathcal{A}_\beta-\partial_\beta\mathcal{A}_\alpha)u^\beta] => 
+\end{gather*}
+Уравнения движения заряженной массивной частицы в электромагнитном поле:\\
+$m\frac{du_\alpha}{dr}=q(\partial_\alpha\mathcal{A}_\beta-\partial_\beta\mathcal{A}_\alpha)u^\beta$ или $F_\alpha=q\mathcal{F}_{\alpha\beta}u^\beta$ - 4-сила Лоренца.
+% теоремы и определения
+%\begin{definition}
+%\label{m-01-def-work}
+%	метка, для последующих ссылок, сама ссылка \ref{m-01-def-work}
+%Элементарной работой силы $\vec F$ называется такая величина $A$, что:
+%\( \displaystyle \delta A = \vec F d\vec x \).
+%\end{definition}
+
+%\begin{statement}[Свойства работы силы на участке кривой]
+%	{statement} - тип теоремы (можно statement или theorem)
+%	[...] - название
+%\label{m-01-cv-va}
+%авдпоывшщ
+%\end{statement}
+%\begin{proof}/
+%	доказательство
+%и не поспоришь.
+%\end{proof}
+
+% пример вставки картинки
+%\begin{wrapfigure}[20]{L}{0.3\linewidth}
+%	20 - кол-во строк, занимаемых картинкой
+%	0.3\linewidth - щирина картинки в долях длины строки
+%	L - выровнять слева (нестрого) (l - строго)
+%\includegraphics[width=1\linewidth]{img/m-18.eps}
+%	img/m-18.eps - путь к рисунку
+%\caption{Двойной маятник}
+%	подпись
+%\label{m-18-ris}
+%	метка для ссылок, поставить ссылку - \ref{m-18-ris}
+%\end{wrapfigure}
+
+%копия вопроса из phys questions.tex \\
+
+%ответ
+
+\end{document}

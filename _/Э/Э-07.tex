@@ -1,0 +1,115 @@
+\input{__header__}
+
+\begin{document}
+\pdfbookmark[2]{Э-07}{} \paragraph{Э-07}
+Система уравнений Максвелла в пространстве, свободном от зарядов и токов. Электромагнитные волны. Поперечность электромагнитных волн, релятивистские инварианты электромагнитного поля.\\
+
+\textbf{Система уравнений Максвелла в пространстве, свободном от зарядов и токов}\\
+\begin{statement}
+$$\Phi_{\alpha\beta\gamma} \equiv \partial_\gamma F_{\alpha\beta} + \partial_\beta F_{\gamma\alpha} + \partial_\alpha F_{\beta\gamma} = 0 $$
+\end{statement}
+\begin{proof}
+$$\Phi_{\alpha\beta\gamma} \equiv \partial_\gamma F_{\alpha\beta} + \partial_\beta F_{\gamma\alpha} + \partial_\alpha F_{\beta\gamma} = (\partial^2_{\alpha\gamma}\mathcal A_\beta - \partial^2_{\beta\gamma}\mathcal A_{\alpha}) + (\partial^2_{\gamma\beta}\mathcal A_\alpha - \partial^2_{\alpha\beta}\mathcal A_{\gamma}) + (\partial^2_{\alpha\beta}\mathcal A_\gamma - \partial^2_{\gamma\alpha}\mathcal A_{\beta}) = 0  $$
+\end{proof}
+
+\begin{gather*}
+\begin{cases}
+\Phi_{012} = 0 \rightarrow  \partial_2 F_{01} + \partial_1 F_{20} + \partial_0 F_{12} = 0 \rightarrow -\partial_y E_x + \partial_x E_y + \partial_t B_z = 0\\
+\Phi_{013} = 0 \rightarrow  \partial_3 F_{01} + \partial_1 F_{30} + \partial_0 F_{13} = 0 \rightarrow -\partial_z E_x + \partial_x E_z + \partial_t B_y = 0\\
+\Phi_{023} = 0 \rightarrow  \partial_3 F_{02} + \partial_2 F_{30} + \partial_0 F_{23} = 0 \rightarrow -\partial_z E_y + \partial_y E_z + \partial_t B_x = 0\\
+\end{cases}
+\\
+\Phi_{123} = 0 \rightarrow  \partial_3 F_{12} + \partial_2 F_{31} + \partial_1 F_{23} = 0 \rightarrow \partial_z B_z + \partial_y B_y + \partial_x B_x = 0\\
+\end{gather*}
+Первые три уравнения дают выражение для ротора электрического поля, последнее - для дивергенции магнитного поля, что дает первую пару уравнений Максвелла:
+\begin{gather*}
+\begin{cases}
+\nabla \times \vec E = -\partial_t \vec B\\
+\nabla \cdot \vec B = 0
+\end{cases}
+\end{gather*}
+Выведем вторую пару уравнений Максвелла:
+\begin{gather*}
+\mathcal L = \mathcal L_{emf} + \mathcal L_{int}\\
+\mathcal L_{emf} = -\frac{1}{4} F \cdot\cdot F = -\frac{1}{4}F_{\mu \nu}F^{\nu\mu} = \frac{1}{4}F_{\mu\nu}F^{\mu\nu}\\
+\mathcal L_{int} = -j \cdot \mathcal A = -j_\mu \mathcal A^\mu\\
+\frac{\partial\mathcal L}{\partial \mathcal A^\alpha} = \frac{\partial\mathcal L_{int}}{\partial \mathcal A^\alpha} = -j_\mu \delta_\alpha^\mu = -j_\alpha;\\
+\frac{\partial \mathcal L}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{\partial \mathcal L_{emf}}{\partial(\partial_\beta\mathcal A^\alpha)} = \frac{1}{4} \cdot 2F_{\mu\nu}\frac{\partial F^{\mu \nu}}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{1}{2}F_{\mu\nu}\frac{\partial(\partial^\mu\mathcal A^\nu - \partial^\nu \mathcal A^\mu)}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{1}{2}\left(F^\mu_\nu\frac{\partial(\partial_\mu\mathcal A^\nu)}{\partial(\partial_\beta \mathcal A^\alpha)} - F^\nu_\mu\frac{\partial(\partial_\nu\mathcal A^\mu)}{\partial(\partial_\beta \mathcal A^\alpha)}\right) =\\ =  \frac{1}{2} \left( F^\mu_{\ \nu} \delta^\beta_\mu \delta^\nu_\alpha - F^{\ \nu}_\mu \delta^\beta_\nu \delta^\mu_\alpha \right) = \frac{1}{2} \left(F^\beta_{\ \alpha} - F^{\ \beta}_\alpha\right)
+\end{gather*}
+Подставляем полученные частные производные в полевые уравнения Эйлера - Лагранжа:
+\begin{gather*}
+-j_\alpha - \frac{1}{2} \partial_\beta\left(F^\beta_{\ \alpha} - F_\alpha^{\ \beta}\right) = 0 \rightarrow \partial^\beta F_{\beta\alpha} = -j_\alpha
+\end{gather*}
+Распишем подробнее:
+\begin{gather*}
+\partial^0F_{00} + \partial^1F_{10} + \partial^2 F_{20} + \partial^3F_{30} = -j_0 \rightarrow \partial_x E_x + \partial_y E_y + \partial_z E_z = \rho\\
+\begin{cases}
+\partial^0F_{01} + \partial^1F_{11} + \partial^2 F_{21} + \partial^3F_{31} = -j_1 \rightarrow -\partial_t(- E_x) - \partial_y B_z + \partial_z B_y = -j_x\\
+\partial^0F_{02} + \partial^1F_{12} + \partial^2 F_{22} + \partial^3F_{32} = -j_2 \rightarrow -\partial_t(- E_y) + \partial_x B_z - \partial_z B_x = -j_y\\
+\partial^0F_{03} + \partial^1F_{13} + \partial^2 F_{23} + \partial^3F_{33} = -j_3 \rightarrow -\partial_t(- E_z) - \partial_x B_y + \partial_y B_x = -j_z\\
+\end{cases}
+\end{gather*}
+Первое уравнение дает выражение для дивергенции электрического поля, остальные три - для ротора магнитного поля. Так получаем вторую пару уравнений Максвелла:
+\begin{gather*}
+\begin{cases}
+\nabla \cdot \vec E = \rho\\
+\nabla \times \vec B = \partial_t \vec E + \vec j
+\end{cases}
+\end{gather*}
+Так как рассматривается пространство, свободное от зарядов и токов, то $\rho = 0, \vec j = 0$ и система уравнений Максвелла примет вид:
+ \begin{gather*}
+ \begin{cases}
+ \nabla \times \vec E = -\partial_t \vec B\\
+\nabla \cdot \vec B = 0\\
+\nabla \cdot \vec E = 0\\
+\nabla \times \vec B = \partial_t \vec E
+ \end{cases}
+ \end{gather*}
+Покажем, что существуют электромагнитные волны - возмущения ЭМП, распространяющиеся в вакууме со скоростью 1:
+\begin {gather*}
+\nabla \times \left(\nabla \times \vec E\right) = \nabla\nabla \cdot \vec E - \nabla^2 \vec E = -\nabla^2\vec E = -\triangle \vec E\\
+\nabla \times \left(\nabla \times \vec E\right) = -\partial_t \nabla \times \vec B = -\partial^2_t \vec E
+ \end{gather*}
+Следовательно:
+$$(\partial^2_t - \triangle) \vec E = \Box \vec E = 0$$
+Аналогично для вектора $\vec B$: 
+\begin {gather*}
+\nabla \times \left(\nabla \times \vec B\right) = \nabla\nabla \cdot \vec B - \nabla^2 \vec B = -\nabla^2\vec B = -\triangle \vec B\\
+\nabla \times \left(\nabla \times \vec B\right) = \partial_t \nabla \times \vec E = -\partial^2_t \vec B
+ \end{gather*}
+Следовательно:
+$$(\partial^2_t - \triangle) \vec B = \Box \vec B = 0$$
+\textbf{Поперечнось волн. Релятивистские инварианты ЭМП}\\
+Комплексная форма записи полей:
+\begin{gather*}
+\vec E = \vec E_0 e^{-i\omega t} e^{i \vec k \cdot \vec x}\qquad
+\vec B = \vec B_0 e^{-i\omega t} e^{i \vec k \cdot \vec x}\\
+\nabla \times \vec E = i \vec k \times \vec E\\
+\nabla \times \vec E = -\partial_t \vec B = i\omega \vec B 
+\end{gather*}
+Следовательно:
+$$\omega \vec B = \vec k \times \vec E,$$
+что означает, что вектора $\vec k, \vec E, \vec B$ образуют правую тройку векторов. Докажем их ортогональность:
+
+\begin{gather*}
+\nabla \cdot \vec E = \partial_x \left(\vec E_0 e^{-i\omega t} e^{ix\vec k} \right) +  \partial_y \left(\vec E_0 e^{-i\omega t} e^{iy\vec k} \right) +  \partial_z \left(\vec E_0 e^{-i\omega t} e^{iz\vec k} \right) = \left|\text{из уравнений Максвелла}\right| = 0\\
+i\vec k \cdot \vec E = 0 \rightarrow \vec k \perp \vec E\\
+\nabla \cdot \vec B = \partial_x \left(\vec B_0 e^{-i\omega t} e^{ix\vec k} \right) +  \partial_y \left(\vec B_0 e^{-i\omega t} e^{iy\vec k} \right) +  \partial_z \left(\vec B_0 e^{-i\omega t} e^{iz\vec k} \right) = \left|\text{из уравнений Максвелла}\right| = 0\\
+i\vec k \cdot \vec B = 0 \rightarrow \vec k \perp \vec B\\
+\end{gather*}
+Вектора $\vec k, \vec E, \vec B$ являются ортогональной правой тройкой, что говорит о поперечности электромагнитных волн.\\
+Инварианты:\\
+1.
+\begin{gather*}
+inv = F^2\cdot \cdot \eta = F_{\mu\nu} (e^\mu \otimes e^\nu) \cdot F^{\rho \sigma} (e_\rho \otimes e_\sigma) \cdot \cdot \eta_{\alpha\beta} (e^\alpha \otimes e^\beta) = F_{\mu\nu}F^{\rho\sigma}\delta^\nu_\rho \delta^\alpha_\sigma \eta^{\mu\beta}\eta_{\alpha\beta} = F_{\mu\nu}F^{\nu\mu} \\
+F_{\mu\nu}F^{\nu\mu} = F_{0\nu}F^{\nu 0} + F_{j\nu}F^{\nu j} = F_{00}F^{00} + F_{0k}F^{k0} + F_{j0}F^{0j} + F_{j0}F^{0j} = -2F_{0j}F^{0j} - F_{jk}F^{jk}\\
+-2F_{0j}F^{0j} - F_{jk}F^{jk} = 2 \vec E \cdot \vec E - \left(B^2_y + B^2_z + B^2_x + B^2_z + B^2_x + B^2_y\right) = 2\vec E \cdot \vec E - 2 \vec B \cdot \vec B\\
+F^2 \cdot \cdot \eta = 2\left(E^2 - B^2\right) 
+\end{gather*}
+2. 
+\begin {gather*}
+inv = det F_{\mu\nu} = \left|\begin{matrix}0 & -E_x & -E_y & -E_z\\ E_x & 0 & B_z & -B_y \\ E_y & -B_z & 0 & B_x \\ E_z & B_y & -B_x & 0 \end{matrix}\right| = \left(\vec E \cdot \vec B\right)^2
+\end{gather*}
+Получается, что из ортогональности векторов $\vec E$ и $\vec B$ в одной ИСО следует ортогональность векторов $\vec E'$ и $\vec B'$ в другой ИСО'. 
+Релятивистскими инвариантами точечной частицы являются масса и электрический заряд. 
+\end{document} 

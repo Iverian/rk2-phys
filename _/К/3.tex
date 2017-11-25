@@ -1,0 +1,77 @@
+\include{__preamble__}
+
+\begin{document}
+
+\paragraph{3}
+Покажите, что коммутационные соотношения наблюдаемых операторов не зависят от выбора представления. Приведите примеры.\\
+
+Рассмотрим два ортонормированных базиса $E=\{\left|j\right\rangle\}$ и $\mathscr{E}=\{\left|\mathscr{j}\right\rangle\}$, один из которых определяет дискретное представление $R$ (индексы принадлежат $\mathbb{N}$ и меняются дискретно), другой $\mathscr{R}$ -- непрерывное (индексы из $\mathbb{R}$, суммирование по индексу заменено на интегрирование по нему же). Свойство ортонормированности запишем так:
+\begin{gather*}
+    \begin{array}{cc}
+        \langle k | j \rangle = \delta_{kj};       & \langle \mathscr{k} | \mathscr{j} \rangle = \delta(\mathscr{k-j});      \\
+        \sum_{j}|j\rangle \langle j| = \mathrm{I}; & \int d\mathscr{j} |\mathscr{j}\rangle \langle\mathscr{j}| = \mathrm{I}; \\
+    \end{array}
+\end{gather*}
+где $\mathrm{I}$ -- единичный оператор. Очевидно, что элементы одного базиса могут быть представлены через элементы другого:
+\begin{gather*}
+    \begin{array}{cc}
+        |j\rangle = \int d\mathscr{j} |\mathscr{j}\rangle \langle\mathscr{j}|j\rangle;\qquad &
+        |\mathscr{j}\rangle = \sum_{j}|j\rangle \langle j|\mathscr{j}\rangle
+    \end{array}
+\end{gather*}
+Тогда пусть $W=\langle j|\mathscr{j}\rangle$ -- унитарный (оператор, обратный к которому получается взятием комплесного сопряжения от транспонированного оператора, $A=(a_{ij})\colon A^{-1}=(b_{ij})\colon b_{ij}=\bar{a}_{ji}$) оператор перехода $R\rightarrow\mathscr{R}$.\\
+Запишем наблюдаемый оператор $\hat{A}$ в двух представлениях:
+\begin{gather*}
+    \begin{array}{cc}
+        A_R = (\langle j'|\hat{A}|j\rangle) & A_\mathscr{R} = (\langle \mathscr{j}'|\hat{A}|\mathscr{j}\rangle)
+    \end{array}
+\end{gather*}
+Через матрицу перехода ($W^{-1}=W^\dagger$ -- эрмитово сопряженный оператор к $W$):
+\begin{gather*}
+    A_\mathscr{R} = W^\dagger A_R W
+\end{gather*}
+
+Запишем коммутатор двух наблюдаемых операторов $\hat{A}$ и $\hat{B}$:
+\begin{gather*}
+    [\hat{A},\hat{B}] = \hat{A}\hat{B}-\hat{B}\hat{A}
+\end{gather*}
+Тогда коммутатор в $\mathscr{R}$:
+\begin{flalign*}
+    &
+    [\hat{A},\hat{B}]_\mathscr{R}
+    =
+    A_\mathscr{R} B_\mathscr{R}-B_\mathscr{R} A_\mathscr{R}
+    =
+    (W^\dagger A_R W)(W^\dagger B_R W) - (W^\dagger B_R W)(W^\dagger A_R W)
+    =\\
+    =&
+    W^\dagger(A_R B_R - B_R A_R)W
+    =\\
+    =&
+    W^\dagger[\hat{A},\hat{B}]_R W,
+\end{flalign*}
+получим, что коммутатор преобразуется по линейному закону, т.е. существует оператор $\hat{C}=[\hat{A},\hat{B}]$, матрица которого совпадает с матрицей коммутатора в любом представлении. Осталось лишь показать, что наблюдаемый оператор остается таковым при переходе, т.е. $\hat{A}=\hat{A}^\dagger$ соблюдается в любом представлении:
+\begin{gather*}
+    A_\mathscr{R}=W^\dagger A_R W
+    \Longrightarrow
+    A_\mathscr{R}^\dagger = (W^\dagger A_R W)^\dagger = W^\dagger A_R^\dagger (W^\dagger)^\dagger =
+    W^\dagger A_R W = A_\mathscr{R}
+\end{gather*}
+
+В качестве примера рассмотрим коммутатор $[\hat{x},\hat{p}]$: в координатном представлении:
+\begin{gather*}
+    [\hat{x},\hat{p}]=i\hbar
+\end{gather*}
+Вычислим этот коммутатор в импульсном представлении:
+\begin{gather*}
+    [\hat{x},\hat{p}]\breve{\Psi}(p)
+    =
+    \left(-\frac{\hbar}{i}\frac{d}{dp}p+\frac{\hbar}{i}p\frac{d}{dp}\right)\breve{\Psi}(p)
+    =
+    \frac{h}{i}\left(\breve{\Psi}(p)-p\frac{d\breve{\Psi}(p)}{dp}+p\frac{d\breve{\Psi}(p)}{dp}\right)
+    =
+    i\hbar\breve{\Psi}(p)
+\end{gather*}
+т.е. при действии на $\breve{\Psi}(p)$ коммутатором, она переходит в $i\hbar\breve{\Psi}(p)$, т.е. сам коммутатор можно записать как $i\hbar$, что совпадает с координатной формой.
+
+\end{document}

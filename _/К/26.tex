@@ -1,0 +1,42 @@
+\include{__preamble__}
+
+\begin{document}
+
+\paragraph{26}Воспользуйтесь постулатами Бора, чтобы получить комбинационное правило Ритберга-Ритца.\\
+\begin{definition}
+	Комбинацио́нный при́нцип Ри́тца — основной закон спектроскопии, установленный эмпирически Вальтером Ритцем в 1908 году. Согласно этому принципу всё многообразие спектральных линий какого-либо элемента может быть представлено через комбинации неких величин, получивших название термы.Спектроскопическое волновое число (не путать с волновым вектором k) каждой спектральной линии можно выразить через разность двух термов:
+\end{definition}
+\begin{flalign}
+\overbrace{\nu}=\frac{1}{\lambda}=T_{n_1} -T_{n_2}
+\end{flalign}
+\begin{flalign}
+	T_n = \frac{R_n}{n^2}
+\end{flalign}
+$R_n$ - постоянная Ритберга\\
+
+
+Определим энергию, отвечающую боровским стационарным состояниям:
+
+\begin{flalign}
+\varepsilon_n = \frac{mv^2}{2}-\frac{kZe^2}{r}=-\frac{kZe^2}{2r}= -\frac{Z^2}{n^2} \frac{k^2*m*e^4}{2\hbar^2}
+\end{flalign}
+Используя правило частот Бора:
+\begin{flalign}
+	\hbar\omega_(n_2 - n_1)=\varepsilon_{n_2}-\varepsilon_{n_1}=\frac{k^2 m e^4}{2 \hbar^2}Z^2(\frac{1}{n_1^2}-\frac{1}{n_2^2})
+\end{flalign}
+Подставим следующее вместо $\omega_(n_2 - n_1)$:
+\begin{flalign}
+	\frac{2\pi c}{\lambda_(n_2 n_1)} 
+\end{flalign}
+Следовательно:
+\begin{flalign}
+	\frac{1}{\lambda_(n_2 n_1)} = \frac{k^2 m e^4}{4\pi c \hbar^3}Z^2(\frac{1}{n_1^2}-\frac{1}{n_2^2})
+\end{flalign}
+\begin{flalign}
+	\frac{k^2 m e^4}{4\pi c \hbar^3}=R_n \text{ -- константа Ритберга}
+\end{flalign}
+А принимая $Z$ за 1, получим комбинационное правило Ритберга-Ритца.
+
+
+
+\end{document}

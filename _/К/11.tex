@@ -1,0 +1,61 @@
+\include{__preamble__}
+
+\begin{document}
+	\paragraph{11}
+	Операторы проекции момента импульса на выделенное направление $\hat{L}_x, \hat{L}_y, \hat{L}_z$ и оператор квадрата момента импульса, запишите и прокомментируйте коммутационные соотношения.
+	\\
+	Момент импульса:\\
+	$$\vec{L} = \vec{r} \times \vec{p} = \left|
+	\begin{matrix}
+	\vec{l_x} & \vec{l_y} & \vec{l_z} \\
+	x & y & z \\
+	p_x & p_y & p_z
+	\end{matrix}
+	\right| =
+	\vec{l_x}(yp_z-zp_y)+
+	\vec{l_y}(zp_x-xp_z)+
+	\vec{l_z}(xp_y-yp_x) 
+	=
+	L_x\vec{l_x}+L_y\vec{l_y}+L_z\vec{l_z}
+	 $$
+	 В квантовой механике постулат о физических величинах утверждает, что физической величине соответствует оператор.\\
+	 Операторы проекции момента импульса на выделенные направления:\\
+	 $\widehat{L_x} = \widehat{y}\widehat{p_z} - \widehat{z}\widehat{p_y} = \frac{\hbar}{i}(y \partial_z - z \partial_y)$.\\
+	 $\widehat{L_y} = \widehat{z}\widehat{p_x} - \widehat{x}\widehat{p_z} = \frac{\hbar}{i}(z \partial_x - x \partial_z)$.\\
+	 $\widehat{L_z} = \widehat{x}\widehat{p_y} - \widehat{y}\widehat{p_x} = \frac{\hbar}{i}(x \partial_y - y \partial_x)$.\\
+	 Установим коммутационные соотношения. Сделаем мы это для того, чтобы понять можно ли одновременно точно померять соответствующие величины и если нет, то записать соотношение неопределенностей этих величин.\\
+	 Так, мы можем одновременно точно измерить $p_x$ и $p_y$. $[\widehat{p_x},\widehat{p_y}]\sim[\partial_x,\partial_y] = 0$.\\
+	 Мы сделаем проверку коммутатора $[\widehat{L_x},\widehat{L_y}]$ прежде чем писать 0.\\
+	 $$[\widehat{L_x},\widehat{L_y}] = [y\widehat{p_z} - z\widehat{p_y},\widehat{L_y}] = [y\widehat{p_z},\widehat{L_y}] - [z\widehat{p_y},\widehat{L_y}]$$
+	 $$[y\widehat{p_z},\widehat{L_y}] = y[\widehat{p_z},\widehat{L_y}]+ \underbrace{[y,\widehat{L_y}]\widehat{p_z}}_0$$
+	 $$
+	 [\widehat{p_z},\widehat{L_y}]
+	 =
+	 \left([\widehat{p_z},z\widehat{p_x}] = [\widehat{p_z},z]\widehat{p_x}+z[\widehat{p_z},\widehat{p_x}]\right)
+	 -
+	 \left([\widehat{p_z},x\widehat{p_z}]\right)
+	 =
+	 (-i\hbar+0)
+	 -
+	 (0)
+	 =
+	 -i\hbar
+	 $$
+	 Обобщим: $[\widehat{L_y},\widehat{p_z}] = i\hbar\widehat{p_x}$
+	 Циклические перестановки:\\
+	 $[\widehat{L_z},\widehat{p_x}] = i\hbar \widehat{p_y}$\\
+	 $[\widehat{L_x},\widehat{p_y}] = i\hbar\widehat{p_z}$\\
+	 $$[x\widehat{p_y},\widehat{L_y}] = \widehat{p_y}[z,z\widehat{p_x} - x\widehat{p_z}] = -i\hbar x\widehat{p_y}$$
+	 Вывод: $[y\widehat{p_z},\widehat{L_y}] = -i\hbar y\widehat{p_x}$\\
+	 Цеклической перестановкой индексов, получим: $[\widehat{L_x},\widehat{L_y}] = i\hbar \widehat{L_z}$\\
+	 Тот факт, что компоненты момента импульса не коммутируют озночает , что испуользовать мы будем какую-то одну из компонент в заданный момент времени.\\
+	 Теперь, когда мы знаем коммутатор $\widehat{L_x}$ и $\widehat{L_y}$, мы можем выписать соотношение неопределенностей для этих компонент:
+	 $$\triangle L_x \triangle L_y \geq \frac{|<[\widehat{L_x},\widehat{L_y}]>|}{2}$$
+	 $$\triangle L_x \triangle L_Y \geq \frac{h}{2} <L_z>$$
+	 Квадрат момента импульса: $\vec{L}^2 = L_x ^2 + L_y ^2 + L_z ^2$.\\
+	 $$ [\widehat{L_z},\widehat{L_x}^2] = [\widehat{L_z},\widehat{L_x}]\widehat{L_x}+\widehat{L_x}[\widehat{L_z},\widehat{L_x}] = [\widehat{L_z},\widehat{L_x}]\widehat{L_x}+ i\hbar \widehat{L_y}$$
+	 $$ [\widehat{L_z},\widehat{L_y}^2] = [\widehat{L_z},\widehat{L_y}]\widehat{L_y} + \widehat{L_y}[\widehat{L_z},\widehat{L_y}] = [\widehat{L_z},\widehat{L_y}]\widehat{L_y} + (-i \hbar \widehat{L_x})$$
+	 $$[\widehat{L_z},\widehat{L_z}^2] = 0$$
+	 Теперь:
+	$$ \triangle \widehat{L_z} \triangle(\widehat{L}^2) \geq \underbrace{ \frac{|<[\widehat{L_z},\widehat{L}^2]>|}{2}}_0$$
+\end{document}

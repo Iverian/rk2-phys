@@ -1,0 +1,152 @@
+% возьмите __header__ из папки вопросы для преднастройки документа
+\input{__header__}
+
+\begin{document}
+\paragraph{Э-02}
+Система уравнений Максвелла-Лоренца в вакууме. Работа электрической и магнитной составляющей силы Лоренца. Закон сохранения электрического заряда.
+
+\textbf{Система уравнений Максвелла-Лоренца в вакууме}\\
+
+\begin{gather*}
+	H = rot A, \quad E = -\frac{1}{c}\frac{\partial A}{\partial t} - grad \varphi,
+\end{gather*}
+где $H$ - напряжённость магнитного поля, $E$ - напряжённость электрического поля,
+$A$ - векторный потенциал поля,
+$\varphi$ - скалярный потенциал.
+
+Определим $rot E$:
+\begin{gather*}
+	rot E = -\frac{1}{c}\frac{\partial}{\partial t}rot A - rot grad \varphi.
+\end{gather*}
+
+Ротор градиента равен нулю.
+\begin{gather}
+	\label{e-02-rotE}
+	rot E = -\frac{1}{c}\frac{\partial H}{\partial t}.
+\end{gather}
+
+Возьмём дивергенцию от обеих частей уравнения $rot A = H$ (дивергенция ротора равна нулю):
+\begin{gather}
+	\label{e-02-divH}
+	div H = 0
+\end{gather}
+
+Уравнения $\ref{e-02-rotE}$ и  $\ref{e-02-divH}$ составляют первую пару уравнений Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Edl = \frac{1}{c}\frac{\partial}{\partial t}\int Hdf,\\
+	\oint H df = 0.
+\end{gather*}
+
+Для вывода второй пары уравнений Максвелла нам нужно знать, что действие:
+\begin{gather}
+	\label{e-02-S}
+	S = -\sum\int mcds - \frac{1}{c^2}\int A_ij^id\Omega - \frac{1}{16\pi c}\int F_{ik}F^{ik}d\Omega.
+\end{gather}
+
+При нахождении уравнений поля их принципа наименьшего действия мы должны считать заданным движения зарядов и должны варьировать только потенциалы поля(играющие здесь роль "координат" системы); при нахождении уравнений движения мы, наоборот, считали поле заданным и варьировали траекторию частицы.
+Поэтому вариация первого члена в $\ref{e-02-S}$ равна теперь нулю, а во втором не должен варьироваться ток $j^i$. Таким образом, 
+\begin{gather*}
+	\delta S = -\frac{1}{c}\big[\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\delta F_{ik}\big]d\Omega = 0
+\end{gather*}
+(при варьировании во втором члене учтено, что $F^{ik}\delta F_{ik} \equiv F_{ik}\delta F^{ik}$). Подставляя
+\begin{gather*}
+	F_{ik} = \frac{\partial A_k}{\partial x^i} - \frac{\partial A_i}{\partial x^k},
+\end{gather*}
+имеем:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int \big\{\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^i}\delta A_k - \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Во втором члене меняем местами индексы $i$ и $k$, по которым производится суммирование, и, кроме того, заменяем $F_{ki}$ на $-F_{ik}$.\\
+Тогда мы получим:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i\delta A_i - \frac{1}{4\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Второй из этих интегралов берём по частям, т.е. применяем теорему Гаусса:
+\begin{gather}
+	\label{e-02-deltaS}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k}\big\}\delta A_id\Omega - \frac{1}{4\pi c}\int F^{ik}\delta A_idS_k\big|.
+\end{gather}
+Во втором члене  мы должны взять его значение на пределах интегрирования. Пределами интегрирования по координатам является бесконечность, где поле исчезает. На пределах же интегрирования по времени, т.е. в заданные начальный и конечный моменты времени, вариация потенциалов равна нулю, так как по смыслу принципа наименьшего действия потенциалы в эти моменты заданы. Таким образом, второй член в $\ref{e-02-deltaS}$ равен нулю, и мы находим:
+\begin{gather*}
+	\int(\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k})\delta A_id\Omega = 0.
+\end{gather*}
+Ввиду того, что по смыслу принципа наименьшего действия вариации $\delta A_i$ произвольны, нулю должен равняться коэффициент при $\delta A_i$, т.е.
+\begin{gather}
+	\label{e-02-deltaF}
+	\frac{\partial F^{ik}}{\partial x^k} = -\frac{4\pi}{c}j^i.
+\end{gather}
+Перепишем эти четыре ($i = 0, 1, 2, 3$) уравнения в трёхмерной форме. При $i=1$ имеем:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial F^{10}}{\partial t} + \frac{\partial F^{11}}{\partial x} + \frac{\partial F^{12}}{\partial y} + \frac{\partial F^{13}}{\partial z} = -\frac{4\pi}{c}j^1.
+\end{gather*}
+Подставляя значения составляющих тензора $F^{ik}$, находим:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial E_x}{\partial t} - \frac{\partial H_z}{\partial y} + \frac{\partial H_y}{\partial z} = -\frac{4\pi}{c}j_x.
+\end{gather*}
+Вместе с двумя следующими $(i = 2, 3)$ уравнениями они могут быть записаны как одно векторное:
+\begin{gather}
+	\label{e-02-rotH}
+	rot H = \frac{1}{c}\frac{\partial E}{\partial t} + \frac{4\pi}{c}j.
+\end{gather}
+Наконец, уравнение с $i=0$ даёт:
+\begin{gather}
+\label{e-02-divE}
+	div E = 4\pi\rho.
+\end{gather}
+Уравнения $\ref{e-02-rotH}$ и $\ref{e-02-divE}$ и составляют вторую пару уравнения Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Hdl = \frac{1}{c}\frac{\partial}{\partial t}\int Edf + \frac{4\pi}{c}\int jdf,\\
+	\oint Edf = 4\pi\int \rho dV.
+\end{gather*}
+ Уравнения Максвелла являются основными уравнениями электродинамики.\\
+
+\textbf{Закон сохранения электрического заряда}\\
+Зако́н сохране́ния электри́ческого заря́да гласит, что алгебраическая сумма зарядов электрически замкнутой системы сохраняется.
+\begin{gather*}
+ q_{1}+q_{2}+q_{3}+......+q_{n}=const
+ \end{gather*}
+ Закон сохранения заряда в интегральной форме\\
+ Вспомним, что плотность потока электрического заряда есть просто плотность тока. Тот факт, что изменение заряда в объёме равно полному току через поверхность, можно записать в математической форме:
+ \begin{gather*}
+ 	{\displaystyle {\frac {\partial }{\partial t}}\int \limits _{\Omega }\rho dV=-\oint \limits _{\partial \Omega }{\vec {j}}\cdot d{\vec {S\ }}.}
+ \end{gather*}
+ Здесь $\Omega$  — некоторая произвольная область в трёхмерном пространстве, $\partial \Omega$  — граница этой области, $\rho$  — плотность заряда, $\vec{j}$ — плотность тока (плотность потока электрического заряда) через границу.
+% теоремы и определения
+%\begin{definition}
+%\label{m-01-def-work}
+%	метка, для последующих ссылок, сама ссылка \ref{m-01-def-work}
+%Элементарной работой силы $\vec F$ называется такая величина $A$, что:
+%\( \displaystyle \delta A = \vec F d\vec x \).
+%\end{definition}
+
+%\begin{statement}[Свойства работы силы на участке кривой]
+%	{statement} - тип теоремы (можно statement или theorem)
+%	[...] - название
+%\label{m-01-cv-va}
+%авдпоывшщ
+%\end{statement}
+%\begin{proof}/
+%	доказательство
+%и не поспоришь.
+%\end{proof}
+
+% пример вставки картинки
+%\begin{wrapfigure}[20]{L}{0.3\linewidth}
+%	20 - кол-во строк, занимаемых картинкой
+%	0.3\linewidth - щирина картинки в долях длины строки
+%	L - выровнять слева (нестрого) (l - строго)
+%\includegraphics[width=1\linewidth]{img/m-18.eps}
+%	img/m-18.eps - путь к рисунку
+%\caption{Двойной маятник}
+%	подпись
+%\label{m-18-ris}
+%	метка для ссылок, поставить ссылку - \ref{m-18-ris}
+%\end{wrapfigure}
+
+%копия вопроса из phys questions.tex \\
+
+%ответ
+
+\end{document}

@@ -1,0 +1,85 @@
+\include{__header__}
+
+\begin{document}
+
+\paragraph{Э-06}
+Найдите электрическое и магнитное поля равномерно и прямолинейно движущегося заряда $q$, производя преобразование полей от системы отсчёта, в которой заряд покоится.\\
+
+Рассмотрим заряд $q$, помещенный в начало координат ИСО $K_1$, движущейся относительно ИСО $K$ вдоль оси $Ox$ с быстротой $\nu=const$, тогда координаты заряда в $K$ примут вид:
+\begin{gather*}
+x^1 = \nu x^0, \quad x^2 = 0, \quad x^3 = 0,
+\end{gather*}
+где $\nu = const$ -- быстрота $K_1$ относительно $K$.
+Из закона Кулона в ИСО $K_1$ потенциал поля, порождаемого зарядом $q$:
+\begin{gather}
+\label{e-06-potez}
+A^{(1)}_{\alpha} = (\varphi_{(1)}, \vec{A}_{(1)}) = (\frac{q}{x_{(1)}},\vec{0}),
+\end{gather}
+где $x_{(1)}=\sqrt{\left(x^1_{(1)}\right)^2+\left(x^2_{(1)}\right)^2+\left(x^3_{(1)}\right)^2}$, тогда напряженности электрического и магнитного полей примут вид:
+\begin{gather}
+\label{e-06-field}
+\vec{E}_{(1)} = -\frac{\partial \vec A_{(1)}}{\partial x^0_{(1)}} - \nabla \varphi_{(1)} = -\nabla \varphi_{(1)},
+\qquad
+\vec{H}_{(1)} = \nabla \times \vec A_{(1)} = \vec{0},
+\end{gather}
+из векторных форм полевых преобразований Лоренца при $\vec{\nu} = \nu\vec{e}_1$ - вектор быстроты $K_1$ относительно $K$:
+\begin{gather}
+\label{e-06-trans}
+\vec{E} = \vec{E}_{(1)} + \vec{H}_{(1)} \times \vec{\nu},
+\qquad
+\vec{H} = \vec{H}_{(1)} - \vec{E}_{(1)} \times \vec{\nu},
+\end{gather}
+тогда из (\ref{e-06-potez}), (\ref{e-06-field}) и (\ref{e-06-trans}):
+\begin{flalign}
+\label{e-06-newfield}
+\begin{split}
+\vec{E} &= -\nabla\varphi_{(1)} = \frac{q}{\left(x_{(1)} \right)^3}\vec x_{(1)} , \\
+\vec{H} &= \nabla\varphi_{(1)} \times\vec\nu =
+-\frac{q\nu}{\left(x_{(1)} \right)^3}\left(x_{(1)}^3\vec{e}^{(1)}_2 - x_{(1)}^2\vec{e}^{(1)}_3\right),
+\end{split}
+\end{flalign}
+Теперь из преобразований Лоренца найдем координаты $\vec{x}_1$ в ИСО $K$:
+\begin{gather}
+\label{e-06-lorenz}
+\left(\begin{matrix}
+x^0_{(1)} \\ x^1_{(1)} \\x^2_{(1)} \\ x^3_{(1)}
+\end{matrix}\right) = 
+\left(\begin{matrix}
+    \gamma & -\gamma\nu & 0 & 0 \\
+-\gamma\nu &     \gamma & 0 & 0 \\
+         0 &          0 & 1 & 0 \\
+         0 &          0 & 0 & 1
+\end{matrix}\right)
+\left(\begin{matrix}
+x^0 \\ x^1 \\ x^2 \\ x^3
+\end{matrix}\right)
+\qquad \Rightarrow \qquad
+\left(\begin{matrix}
+x^0_{(1)} \\ x^1_{(1)} \\x^2_{(1)} \\ x^3_{(1)}
+\end{matrix}\right) =
+\left(\begin{matrix}
+\gamma x^0 - \gamma\nu x^1 \\
+-\gamma\nu x^0 + \gamma x^1 \\
+x^2 \\
+x^3
+\end{matrix}\right),
+\end{gather}
+тогда из (\ref{e-06-newfield}) и (\ref{e-06-lorenz}):
+\begin{gather}
+\label{e-06-module}
+x_{(1)} = \sqrt{\left(x^1_{(1)}\right)^2+\left(x^2_{(1)}\right)^2+\left(x^3_{(1)}\right)^2} =
+\sqrt{\gamma^2\left(x^1-\nu x^0\right)^2+\left(x^2\right)^2+\left(x^3\right)^2},
+\end{gather}
+окончательно из (\ref{e-06-lorenz}) и (\ref{e-06-module}) получим:
+\begin{flalign}
+\begin{split}
+\vec{E} &=
+\frac{q\left(\gamma(x^1-\nu x^0)\vec{e}_1 + x^2\vec{e}_2 + x^3\vec{e}_3\right)}
+{\sqrt[2/3]{\gamma^2\left(x^1-\nu x^0\right)^2+\left(x^2\right)^2+\left(x^3\right)^2}}
+,\\
+\vec{H} &= -\frac{q\nu \left(x^3\vec{e}_2 - x^2\vec{e}_3\right)}
+{\sqrt[2/3]{\gamma^2\left(x^1-\nu x^0\right)^2+\left(x^2\right)^2+\left(x^3\right)^2}},
+\end{split}
+\end{flalign}
+
+\end{document}

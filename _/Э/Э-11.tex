@@ -1,0 +1,86 @@
+\include{__header__}
+
+\begin{document}
+
+\paragraph{Э-11}
+Тензор Максвелла: определение и свойства. Преобразование $\vec E$ и $\vec B$ при переходе из одной инерциальной системы отсчета в другую: на примере буста вдоль $OZ$ и в общей форме.\\
+
+Тензор электромагнитного поля определяется через 4-потенциал по формуле
+\begin{gather*}
+	F_{ik} = \frac{\partial A_k}{\partial x^i}-\frac{\partial A_i}{\partial x^k}
+\end{gather*}
+Этот тензор является антисимметричным ($F_{ik}=-F_{ki}$), диагональные элементы которого равно 0\\
+Рассмотрим чему равен член $F_{01}$
+\begin{gather*}
+F_{01} = \frac{\partial A_1}{\partial x^0}-\frac{\partial A_0}{\partial x^1}=\bigg|A_1=-A_x;A_0=\varphi;x_1=x;\bigg|= -\frac{\partial A_x}{c\partial t}-\frac{\partial \varphi}{\partial x} = E_x
+\end{gather*}
+Проводя аналогичные выкладки можно показать, что $\displaystyle F_{02} = E_y$; $\displaystyle F_{03} = E_z$;\\
+Нам остается узнать чему равны члены $F_{12}$,$F_{13}$,$F_{23}$. Покажем вычисления этих членов на примере $F_{12}$  
+\begin{gather}
+\label{e-11_1}
+	F_{12} = \frac{\partial A_2}{\partial x^1}-\frac{\partial A_1}{\partial x^2} = \frac{\partial A_x}{\partial y}-\frac{\partial A_y}{\partial x}
+\end{gather}
+Нетрудно заметить, что (\ref{e-11_1}) является третьей компонентой ротора $A$ со знаком минус, поэтому 
+\begin{gather*}
+	F_{12} = -\left(rot\vec A\right)_3=-B_z
+\end{gather*}
+Таким образом находятся и  $F_{13}$,$F_{23}$. Остальные члены находятся в силу симметрии. В итоге получаем получаем:
+\begin{gather*}
+	F_{ik} = \begin{pmatrix}
+	0 & E_x & E_y & E_z \\
+	-E_x & 0 & -B_z & B_y \\         
+	-E_y & B_z & 0 & -B_x \\
+	-E_z & -B_y & B_x & 0
+	\end{pmatrix}
+\end{gather*}
+Такая зависимость антисимметричного тензора от 2-х векторов условно записывается как $F_{ik} = (E,B)$\\
+Контравариантный тензор выглядит аналогично за исключением смены знаков в первой колонке и строке
+\begin{gather*}
+F^{ik} = \begin{pmatrix}
+0 & -E_x & -E_y & -E_z \\
+E_x & 0 & -B_z & B_y \\         
+E_y & B_z & 0 & -B_x \\
+E_z & -B_y & B_x & 0
+\end{pmatrix}
+\end{gather*}
+
+Выясним как преобразуются $\displaystyle \vec{E}$ и $\displaystyle \vec{B}$  при переходе из одной инерциальной системы отсчета в другую: на примере буста вдоль $OZ$ и в общей форме.
+
+Так как нам задан буст - $OZ$, то матрица преобразований будет выглядить след. образом:
+\begin{gather*}
+	Z^\alpha_\beta = \begin{pmatrix}
+	\gamma & 0 & 0 & -\gamma v \\
+	0 & 1 & 0 & 0 \\         
+	0 & 0 & 1 & 0 \\
+	-\gamma v & 0 & 0 & \gamma
+	\end{pmatrix}
+\end{gather*}
+Преобразование из одной ИСО в другую осуществляется по следующей формуле:
+\begin{gather*}
+'F^{\alpha \beta} = Z^\alpha_\gamma Z^\beta_\delta F^{\gamma \delta}
+\end{gather*}
+\begin{gather*}
+'E_x ='F^{01} = Z^0_\gamma Z^1_\delta F^{\gamma \delta} = Z^0_0 Z^1_0 F^{00}+Z^0_0 Z^1_1 F^{01}+Z^0_1 Z^1_0 F^{10}+Z^0_1 Z^1_1 F^{11}+Z^0_0 Z^1_2 F^{02}+Z^0_2 Z^1_0 F^{20}+Z^0_0 Z^1_3 F^{03}+\\+Z^0_3 Z^1_0 F^{30}+Z^0_1 Z^1_2 F^{12}+Z^0_2 Z^1_1 F^{21}+Z^0_3 Z^1_1 F^{31}+Z^0_2 Z^1_3 F^{23}+Z^0_3 Z^1_2 F^{32}+Z^0_2 Z^1_2 F^{22}+Z^0_3 Z^1_3 F^{33}=\\
+=Z^0_0 Z^1_1 F^{01}+Z^0_3 Z^1_1 F^{31}=\gamma \cdot 1 \cdot E_x+(-\gamma v)\cdot 1 \cdot B_y = \gamma (E_x-vB_y)
+\end{gather*}
+\begin{gather*}
+'E_y ='F^{02} = Z^0_\gamma Z^2_\delta F^{\gamma \delta} = Z^0_0 Z^2_0 F^{00}+Z^0_0 Z^2_1 F^{01}+Z^0_1 Z^2_0 F^{10}+Z^0_1 Z^2_1 F^{11}+Z^0_0 Z^2_2 F^{02}+Z^0_2 Z^2_0 F^{20}+Z^0_0 Z^2_3 F^{03}+\\+Z^0_3 Z^2_0 F^{30}+Z^0_1 Z^2_2 F^{12}+Z^0_2 Z^2_1 F^{21}+Z^0_3 Z^2_1 F^{31}+Z^0_2 Z^2_3 F^{23}+Z^0_3 Z^2_2 F^{32}+Z^0_2 Z^2_2 F^{22}+Z^0_3 Z^2_3 F^{33}=\\
+=Z^0_0 Z^2_2 F^{02}+Z^0_3 Z^2_2 F^{32}=\gamma \cdot 1 \cdot E_y+(-\gamma v)\cdot 1 \cdot (-B_y) = \gamma (E_y+vB_x)
+\end{gather*}
+\begin{gather*}
+'E_z ='F^{03} = Z^0_\gamma Z^3_\delta F^{\gamma \delta} = Z^0_0 Z^3_0 F^{00}+Z^0_0 Z^3_1 F^{01}+Z^0_1 Z^3_0 F^{10}+Z^0_1 Z^3_1 F^{11}+Z^0_0 Z^3_2 F^{02}+Z^0_2 Z^3_0 F^{20}+Z^0_0 Z^3_3 F^{03}+\\+Z^0_3 Z^3_0 F^{30}+Z^0_1 Z^3_2 F^{12}+Z^0_2 Z^3_1 F^{21}+Z^0_3 Z^3_1 F^{31}+Z^0_2 Z^3_3 F^{23}+Z^0_3 Z^3_2 F^{32}+Z^0_2 Z^3_2 F^{22}+Z^0_3 Z^3_3 F^{33}=\\
+=Z^0_0 Z^3_3 F^{03}+Z^0_3 Z^3_0 F^{30}=\gamma \cdot \gamma \cdot E_z+(-\gamma v)(-\gamma v)(-E_z) = \gamma ^2 E_z(1-v^2) = E_z
+\end{gather*}
+\begin{gather*}
+'B_x ='F^{23} = Z^2_\gamma Z^3_\delta F^{\gamma \delta} = Z^2_0 Z^3_0 F^{00}+Z^2_0 Z^3_1 F^{01}+Z^2_1 Z^3_0 F^{10}+Z^2_1 Z^3_1 F^{11}+Z^2_0 Z^3_2 F^{02}+Z^2_2 Z^3_0 F^{20}+Z^2_0 Z^3_3 F^{03}+\\+Z^2_3 Z^3_0 F^{30}+Z^2_1 Z^3_2 F^{12}+Z^2_2 Z^3_1 F^{21}+Z^2_3 Z^3_1 F^{31}+Z^2_2 Z^3_3 F^{23}+Z^2_3 Z^3_2 F^{32}+Z^2_2 Z^3_2 F^{22}+Z^2_3 Z^3_3 F^{33}=\\
+=Z^2_2 Z^3_0 F^{20}+Z^2_2 Z^3_3 F^{23}=1 \cdot (-\gamma v)(-E_y)+1 \cdot \gamma \cdot B_x=\gamma (B_x+vE_y)
+\end{gather*}
+\begin{gather*}
+'B_y ='F^{31} = Z^3_\gamma Z^1_\delta F^{\gamma \delta} = Z^3_0 Z^1_0 F^{00}+Z^3_0 Z^1_1 F^{01}+Z^3_1 Z^1_0 F^{10}+Z^3_1 Z^1_1 F^{11}+Z^3_0 Z^1_2 F^{02}+Z^3_2 Z^1_0 F^{20}+Z^3_0 Z^1_3 F^{03}+\\+Z^3_3 Z^1_0 F^{30}+Z^3_1 Z^1_2 F^{12}+Z^3_2 Z^1_1 F^{21}+Z^3_3 Z^1_1 F^{31}+Z^3_2 Z^1_3 F^{23}+Z^3_3 Z^1_2 F^{32}+Z^3_2 Z^1_2 F^{22}+Z^3_3 Z^1_3 F^{33}=\\
+=Z^3_0 Z^1_1 F^{01}+Z^3_3 Z^1_1 F^{31}=(-\gamma v)\cdot 1 \cdot E_x+\gamma \cdot 1 \cdot B_y = \gamma(B_y-vE_x)
+\end{gather*}
+\begin{gather*}
+'B_z ='F^{12} = Z^1_\gamma Z^2_\delta F^{\gamma \delta} = Z^1_0 Z^2_0 F^{00}+Z^1_0 Z^2_1 F^{01}+Z^1_1 Z^2_0 F^{10}+Z^1_1 Z^2_1 F^{11}+Z^1_0 Z^2_2 F^{02}+Z^1_2 Z^2_0 F^{20}+Z^1_0 Z^2_3 F^{03}+\\+Z^1_3 Z^2_0 F^{30}+Z^1_1 Z^2_2 F^{12}+Z^1_2 Z^2_1 F^{21}+Z^1_3 Z^2_1 F^{31}+Z^1_2 Z^2_3 F^{23}+Z^1_3 Z^2_2 F^{32}+Z^1_2 Z^2_2 F^{22}+Z^1_3 Z^2_3 F^{33}=\\
+=Z^1_1 Z^2_2 F^{12} = 1\cdot 1\cdot B_z = B_z
+\end{gather*}
+\end{document}

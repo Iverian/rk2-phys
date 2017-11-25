@@ -1,0 +1,54 @@
+\input{__header__}
+
+\begin{document}
+\paragraph{Э-13}
+Убедитесь, что симметризованный тензор энергии-импульса электромагнитного поля калибровочно инвариантен; интерпретируйте его компоненты.\\
+
+Канонический тензор энергии-импульса имеет вид:
+ \begin{gather*}
+\underset{emf}{T}^{\mu\nu} = F^{\mu\lambda}\partial^\nu A_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+\end{gather*}
+\begin{gather*}
+\underset{emf}{T^{\mu\nu}} - F^{\mu\lambda}\partial_\lambda A^\nu = F^{\mu\lambda}(\partial^\nu A_x - \partial_\lambda A^\nu) - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu} = F^{\mu\lambda}F^\nu_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}\equiv \underset{emf}{\Theta}^{\mu\nu}
+\end{gather*}
+ $\underset{emf}{\Theta}^{\mu\nu}$ - симметризованый тензор энергии-импульса электромагнитного поля.\\
+Выразим компоненты тензора $T^{\mu\nu}$ через напряжённости электрического и магнитного полей. C помощью значений 
+$F_{\mu\nu}= 
+\begin{bmatrix}
+	0 & E_x & E_y & E_z\\
+-E_x & 0 & -H_z & H_y\\
+-E_y & H_z & 0 & -H_x\\
+-E_z & -H_y & H_x & 0
+\end{bmatrix},
+\quad F^{\mu\nu} = 
+\begin{bmatrix}
+0 & -E_x & -E_y & -E_z\\
+E_x & 0 & -H_z & H_y\\
+E_y & H_z & 0 & -H_x\\
+E_z & -H_y & H_x & 0
+\end{bmatrix}
+$
+легко убедиться в том, что $T^{00}$ совпадает, как и следовало, с плотностью энергии $W = \frac{E^2 + H^2}{8\pi}$, а компоненты $cT^{0\alpha}$ - с компонентами вектора Пойнтинга $S = \frac{c}{4\pi}[EH]$. Пространственные же компоненты $T^{\alpha\beta}$ образуют трёхмерный тензор с составляющими
+\begin{gather*}
+	\sigma_{xx} = \frac{1}{8\pi}(E^2_y + E^2_z - E^2_x + H^2_y + H^2_z - H^2_x),\\
+	\sigma_{xy} = -\frac{1}{4\pi}(E_xE_y + H_xH_y)
+\end{gather*}
+и т. д., или
+\begin{gather*}
+	\sigma_{\alpha\beta} = \frac{1}{4\pi}\{-E_\alpha E_\beta - H_\alpha H_\alpha + \frac{1}{2}\delta_{\alpha\beta}(E^2 + H^2)\}.
+\end{gather*}
+ Этот трёхмерный тензор называют максвелловским тензором напряжений.
+ 
+ 
+ Проверим удовлетворяет ли симметризованый тензор энергии-импульса электромагнитного поля локальному закону сохранения, т.е. уравнению непрерывности
+ \begin{gather*}
+ 	\partial_\mu\underset{emf}{\Theta}^{\mu\nu} = 0.
+ \end{gather*}
+ Проверим, так ли это:
+ \begin{gather*}
+ 	\partial_\mu\underset{emf}{\Theta}^{\mu\nu} = \partial_\mu\underset{emf}{T}^{\mu\nu} - \partial_\mu(F^{\mu\lambda}\partial_xA^\nu)\\
+ \end{gather*}
+ 	$ 	\partial_\mu\underset{emf}{T}^{\mu\nu} = 0,$ (см.упр.в разделе "Канонический тензор энергии-импульса")\\
+  	$\partial_\mu(F^{\mu\lambda})\partial_xA^\nu=0$, т.к. в теории свободного ЭМП $\partial_\mu F^{\mu\lambda}=0$(см. ур. Максвелла "с источниками", когда этих источников нет($\gamma^\lambda=0$))\\
+  	$F^{\mu\lambda}\partial_\mu\partial_xA^\nu=0$, т.к. антисимметричный тензор Максвелла сворачивается с симметричным $\partial_\mu\partial_\lambda$.
+\end{document}

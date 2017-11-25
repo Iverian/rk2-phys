@@ -1,0 +1,79 @@
+\include{__preamble__}
+
+\begin{document}
+	\paragraph{9}
+	Вычислить постоянную Стефана-Больцмана, воспользовавшись формулой Планка.\\
+	
+	%Энергетическую светимость абсолютно чёрного тела определим, как:
+	
+	%\begin{gather}
+%		ε_T = \int\limits_{0}^{\infty} ε_{ν,T} dν
+%	\end{gather}
+
+%	Используем формулу Планка для излучательной способности абсолютно чёрного %тела:
+
+%	\begin{gather}
+%		ε_{ν,T} = \frac{2πν^3}{c^2} \frac{h}{exp(\frac{hν}{kT}-1)}
+%	\end{gather}
+%	Подставим (0.2) в (0.1), получим интеграл:
+	
+%	\begin{gather}
+%		ε_T = \int\limits_{0}^{\infty}\frac{2πν^3}{c^2} %\frac{h}{exp(\frac{hν}{kT}-1)}dν = \frac{2\pi h}{c^2} %\int\limits_{0}^{\infty}\frac{ν^3}{exp(\frac{hν}{kT}-1)}dν
+%	\end{gather}
+
+%	Проведём замену переменных, подставим $x = \frac{h\nu}{kT} \rightarrow \nu %= \frac{xkT}{h}$, тогда $dν=\frac{kTdx}{h}$ и интеграл в (0.3) преобразуется %к виду:
+	
+%	\begin{gather}
+%		ε_T=\frac
+%		{2\pi h}{c^2}
+%		\int\limits_{0}^{\infty}
+%		\frac{(\frac{xkT}{h})^3 \frac{kTdx}{h}}{exp(x)-1} = 
+%		\frac{2\pi (kT)^4}{c^2h^3}
+%		\int\limits_{0}^{\infty}
+%		\frac{x^3 σ exp(-x)dx}{1-exp(-x)}		
+%	\end{gather}
+
+%	Разложим значение %
+
+Попробуем вычислить постоянную С-Б при помощи формулы Планка:
+	\begin{gather*}
+	U_\omega(T)=\frac{\hbar\omega^3}{\pi^2c^3}\cdot\frac{1}{e^{\frac{\hbar\omega}{K_BT}}-1}
+	\end{gather*}
+	Запишем энергетическую светимость:
+	\begin{gather*}
+	R^\ast(T)
+	=
+	\int_{0}^{\infty}d\omega r^\ast_\omega(T)
+	=
+	\int_{0}^{\infty}d\omega\frac{c}{4}U_\omega(T)
+	=\\
+	=
+	\left.
+	\int_{0}^{\infty}\frac{\hbar\omega^3}{4\pi^2c^2}\cdot\frac{d\omega}{e^{\frac{\hbar\omega}{K_BT}}-1}
+	\right|_{x=\frac{\hbar\omega}{K_BT}}
+	=
+	\frac{\hbar}{4\pi^2c^2}\left(\frac{K_BT}{\hbar}\right)^4\int_{0}^{\infty}\frac{x^3\cdot dx}{e^x-1}
+	\end{gather*}
+	Посчитаем интеграл отдельно:
+	\begin{gather*}
+	\int_{0}^{\infty}\frac{x^3dx}{e^x-1}
+	=
+	\int_{0}^{\infty}dx\cdot x^3\frac{e^{-x}}{1-e^{-x}}
+	=
+	\int_{0}^{\infty}dx\cdot x^3\sum_{p=1}^{\infty}e^{-px}
+	=\\
+	\left.
+	\sum_{p=1}^{\infty}\int_{0}^{\infty}dx\cdot x^3e^{-px}
+	\right|_{y=-px}
+	=
+	\sum_{p=1}^{\infty}\left(\frac{1}{p^4}\right)\int_{0}^{\infty}dy\cdot y^3e^{-y}
+	=
+	\zeta(4)\cdot\Gamma(4)
+	=
+	\frac{\pi^4}{15},
+	\end{gather*}
+	где $\zeta(y)$ -- дзета-функция Римана.
+	Получаем $\sigma=\frac{\pi^2K_B^4}{60c^2\hbar^3}$, т.к. з-н Стефана-Больцмана: $R^\ast(T)=\sigma T^4$
+	
+	
+\end{document}

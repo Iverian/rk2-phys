@@ -1,0 +1,52 @@
+\include{__preamble__}
+
+\begin{document}
+	
+	\paragraph{16.}
+	Получите и прокомментируйте <<соотношение неопределённостей энергия-время>>.
+	
+	Квантовая механика в общем случае не даёт с достоверностью результатов того или иного измерения в отдельной системе. Что квантовая механика даёт, так это статистическое распределение результатов, получаемых при повторении одного и того же измерения на совокупность очень большого числа таких систем, состояния которых представлены одинаковыми векторными функциями.
+	
+	Итак, статистическое описание явлений микромира неизбежно, и квантовая механика позволяет нам опеределить вероятности того или иного результата эксперимента и средние значения физических величин.
+	
+	Пусть $\hat{A} |j\rangle = a_j |j\rangle$, тогда, если состояние системы определяется вектором $|c\rangle$ (condition), то 
+	$$\langle A \rangle = \langle c | \hat{A} | c \rangle = \sum_{j}^{} \langle c | \hat{A} | j \rangle \langle j | c \rangle = \sum_{j} \langle c | j \rangle \langle j | c \rangle a_j = \sum_{j} |c_j|^2 a_j$$
+	
+	Определим неопределённости: $\Delta A \equiv \sigma[A] \equiv \sqrt{\langle(A-\langle A \rangle)^2\rangle} $
+	
+	$$(\Delta A)^2 = \langle(A-\langle A \rangle)^2\rangle = \langle c | (A - \langle A \rangle)(A - \langle A \rangle) | c \rangle = \langle d | d \rangle $$
+	
+	Аналогично, $(\Delta B)^2 = \langle f | f \rangle$
+	
+	$$(\Delta A)^2 (\Delta B)^2 = \langle d | d \rangle \langle f | f \rangle \geqslant | \langle d | f \rangle |^2 $$
+	
+	Это \textbf{неравенство Шварца}.
+	
+	$$\langle d | f \rangle = \langle c | (\hat{A} - \langle A \rangle)(\hat{B} - \langle B \rangle) | c \rangle = \langle AB \rangle - \langle A \rangle \langle B \rangle$$	
+	
+	$$\langle f | d \rangle = \langle BA \rangle - \langle B \rangle \langle A \rangle$$
+	
+	$$ | \langle d | f \rangle |^2 = Re^2 +Im^2 \geqslant Im^2 = \langle \frac{[A,B]}{2i} \rangle$$
+	
+	\textbf{\textit{Мораль:}} 
+	
+	$$\Delta A \Delta B \geqslant | \langle \frac{[\hat{A},\hat{B}]}{2} \rangle |$$
+	
+	Получается, что соотношение неопределённостей - это некое утверждение о средних.
+	
+	$$\Delta x \Delta p_x \geqslant | \langle \frac{[\hat{x},\hat{p_x}]}{2} \rangle | \rightarrow \Delta x \Delta p_x \geqslant \frac{\hbar}{2}$$
+	
+	Возьмём в качестве $\hat{B}$ гамильтониан, тогда $\Delta A \Delta \xi \geqslant | \langle \frac{[\hat{A},\hat{\mathcal{H}}]}{2} \rangle |$.
+	
+	Если $\hat{A}$ не зависит явно от времени, то $[\hat{A},\hat{\mathcal{H}}]$ полностью определяет скорость эволюции во времени квантовой механики среднего $A$: 
+	
+	$$\frac{d}{dt} \langle A \rangle = \frac{1}{i \hbar} \langle [\hat{A},\hat{H}] \rangle \rightarrow | \langle [\hat{A},\hat{H}] \rangle | = \hbar | \frac{d}{dt} \langle A \rangle |$$
+	
+	Тогда 
+	
+	$$\frac{\Delta A}{\frac{d}{dt}\langle A \rangle} \Delta \xi \geqslant \frac{\hbar}{2},$$
+	
+	где $\frac{\Delta A}{\frac{d}{dt}\langle A \rangle} \equiv \Sigma_A$ - характеристическое время эволюции статистического распределения А.
+	
+	Стационарное состояние $\frac{d}{dt} \langle A \rangle = 0 \Rightarrow \Sigma_A = \infty \Rightarrow \Delta \xi = 0$
+\end{document}

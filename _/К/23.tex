@@ -1,0 +1,38 @@
+\include{__preamble__}
+
+\begin{document}
+
+\paragraph{23}
+Покажите, что при унитарных преобразованиях векторов состояний квантовомеханические средние не меняются.\\
+
+По опредедению \textit{квантовомеханическое среднее} наблюдаемой $\hat{A}$ в состоянии $|c\rangle$ выражается как скалярное произведение
+\begin{gather*}
+\langle A \rangle = \langle c|\hat{A}|c\rangle
+\end{gather*}
+Рассмотрим унитарное преобразование $\Omega\colon \Omega^\dagger=\Omega^{-1}$, тогда вычислим $\langle A\rangle$ в состоянии $|c'\rangle=\Omega|c\rangle$. Вспомним, что $\langle c'|=\left(|c'\rangle\right)^\dagger=\langle c|\Omega^\dagger$, тогда $\langle A\rangle$ примет вид:
+\begin{gather*}
+\langle A \rangle
+=
+\langle c'|\hat{A}'|c'\rangle
+=
+\langle c|\Omega^\dagger \hat{A}' \Omega|c\rangle
+=
+\langle c|\Omega^\dagger \Omega\hat{A}\Omega^\dagger \Omega|c\rangle
+=
+\langle c|\hat{A}|c\rangle
+\end{gather*}
+Вообще, унитарное преобразование на линейном пространстве над комплесным полем -- аналог ортогонального преобразования на пространстве над действительным полем. Можно показать, что унитарные преобразования сохраняют скалярное произведение (с учетом наших магических бра-кет обозначений это элементарно)
+\begin{gather*}
+\begin{cases}
+|a'\rangle = \Omega|a\rangle\\
+|b'\rangle = \Omega|b\rangle\\
+\end{cases}
+\Longrightarrow
+\langle a'|b'\rangle
+=
+\langle a|\Omega^\dagger \Omega |b\rangle
+=
+\langle a|b\rangle
+\end{gather*}
+
+\end{document}
