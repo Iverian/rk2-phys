@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>5880</WindowHeight>
-  <WindowWidth>17256</WindowWidth>
+  <WindowHeight>9324</WindowHeight>
+  <WindowWidth>23040</WindowWidth>
   <WindowTopX>0</WindowTopX>
   <WindowTopY>456</WindowTopY>
   <ProtectStructure>False</ProtectStructure>
@@ -59,7 +59,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Лист1">
-  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="12" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="14" ss:ExpandedRowCount="12" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="14.55">
    <Column ss:StyleID="s62" ss:Width="110.4"/>
    <Column ss:StyleID="s62" ss:Width="36.599999999999994"/>
@@ -104,6 +104,7 @@
     <Cell><Data ss:Type="String">Э-21</Data></Cell>
     <Cell><Data ss:Type="String">Э-23</Data></Cell>
     <Cell><Data ss:Type="String">О-07</Data></Cell>
+    <Cell><Data ss:Type="String">ПРИВЕТ</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="String">Требуется проверка</Data></Cell>
@@ -189,8 +190,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>13</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
