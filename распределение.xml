@@ -16,8 +16,13 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+<<<<<<< HEAD
   <WindowHeight>5880</WindowHeight>
   <WindowWidth>17250</WindowWidth>
+=======
+  <WindowHeight>9324</WindowHeight>
+  <WindowWidth>23040</WindowWidth>
+>>>>>>> 4e29e06dff4ad39b4013427d46b34f25199b293f
   <WindowTopX>0</WindowTopX>
   <WindowTopY>450</WindowTopY>
   <ProtectStructure>False</ProtectStructure>
@@ -59,6 +64,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Лист1">
+<<<<<<< HEAD
   <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="12" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="14.4375">
    <Column ss:StyleID="s62" ss:Width="110.25"/>
@@ -66,6 +72,15 @@
    <Column ss:StyleID="s62" ss:Width="37.5"/>
    <Column ss:StyleID="s62" ss:Width="34.5"/>
    <Column ss:Index="7" ss:StyleID="s62" ss:Width="32.25"/>
+=======
+  <Table ss:ExpandedColumnCount="14" ss:ExpandedRowCount="12" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="14.55">
+   <Column ss:StyleID="s62" ss:Width="110.4"/>
+   <Column ss:StyleID="s62" ss:Width="36.599999999999994"/>
+   <Column ss:StyleID="s62" ss:Width="37.800000000000004"/>
+   <Column ss:StyleID="s62" ss:Width="34.199999999999996"/>
+   <Column ss:Index="7" ss:StyleID="s62" ss:Width="32.4"/>
+>>>>>>> 4e29e06dff4ad39b4013427d46b34f25199b293f
    <Column ss:StyleID="s62" ss:Width="33"/>
    <Column ss:StyleID="s62" ss:Width="50.25"/>
    <Column ss:StyleID="s62" ss:Width="70.5"/>
@@ -104,6 +119,7 @@
     <Cell><Data ss:Type="String">Э-21</Data></Cell>
     <Cell><Data ss:Type="String">Э-23</Data></Cell>
     <Cell><Data ss:Type="String">О-07</Data></Cell>
+    <Cell><Data ss:Type="String">ПРИВЕТ</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67"><Data ss:Type="String">Требуется проверка</Data></Cell>
@@ -192,7 +208,11 @@
    <Panes>
     <Pane>
      <Number>3</Number>
+<<<<<<< HEAD
      <ActiveRow>6</ActiveRow>
+=======
+     <ActiveRow>3</ActiveRow>
+>>>>>>> 4e29e06dff4ad39b4013427d46b34f25199b293f
      <ActiveCol>13</ActiveCol>
     </Pane>
    </Panes>
