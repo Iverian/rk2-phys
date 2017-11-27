@@ -10,16 +10,16 @@
   <LastAuthor>Старченко Артем</LastAuthor>
   <Created>2017-11-22T16:39:23Z</Created>
   <LastSaved>2017-11-23T15:29:34Z</LastSaved>
-  <Version>16.00</Version>
+  <Version>14.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <WindowHeight>5880</WindowHeight>
-  <WindowWidth>17256</WindowWidth>
+  <WindowWidth>17250</WindowWidth>
   <WindowTopX>0</WindowTopX>
-  <WindowTopY>456</WindowTopY>
+  <WindowTopY>450</WindowTopY>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -60,17 +60,17 @@
  </Styles>
  <Worksheet ss:Name="Лист1">
   <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="12" x:FullColumns="1"
-   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="14.55">
-   <Column ss:StyleID="s62" ss:Width="110.4"/>
-   <Column ss:StyleID="s62" ss:Width="36.599999999999994"/>
-   <Column ss:StyleID="s62" ss:Width="37.800000000000004"/>
-   <Column ss:StyleID="s62" ss:Width="34.199999999999996"/>
-   <Column ss:Index="7" ss:StyleID="s62" ss:Width="32.4"/>
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="14.4375">
+   <Column ss:StyleID="s62" ss:Width="110.25"/>
+   <Column ss:StyleID="s62" ss:Width="36.75"/>
+   <Column ss:StyleID="s62" ss:Width="37.5"/>
+   <Column ss:StyleID="s62" ss:Width="34.5"/>
+   <Column ss:Index="7" ss:StyleID="s62" ss:Width="32.25"/>
    <Column ss:StyleID="s62" ss:Width="33"/>
-   <Column ss:StyleID="s62" ss:Width="50.4"/>
-   <Column ss:StyleID="s62" ss:Width="70.8"/>
-   <Column ss:StyleID="s62" ss:Width="31.200000000000003"/>
-   <Column ss:StyleID="s62" ss:Width="41.4"/>
+   <Column ss:StyleID="s62" ss:Width="50.25"/>
+   <Column ss:StyleID="s62" ss:Width="70.5"/>
+   <Column ss:StyleID="s62" ss:Width="31.5"/>
+   <Column ss:StyleID="s62" ss:Width="41.25"/>
    <Column ss:StyleID="s62" ss:Width="63"/>
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="2"><Data ss:Type="String">Антон</Data></Cell>
@@ -112,6 +112,9 @@
     <Cell ss:Index="10"><Data ss:Type="String">К-24</Data></Cell>
     <Cell><Data ss:Type="String">К-18</Data></Cell>
     <Cell ss:Index="13"><Data ss:Type="String">К-11</Data></Cell>
+   </Row>
+   <Row ss:Index="6" ss:AutoFitHeight="0">
+    <Cell ss:Index="8"><Data ss:Type="String">х</Data></Cell>
    </Row>
    <Row ss:Index="8" ss:AutoFitHeight="0">
     <Cell ss:Index="2" ss:MergeAcross="11" ss:StyleID="s65"><Data ss:Type="String">СТАРЫЕ ВОПРОСЫ</Data></Cell>
@@ -189,8 +192,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>13</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
