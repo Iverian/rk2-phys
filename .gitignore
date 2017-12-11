@@ -6,6 +6,7 @@
 *.synctex.gz
 *.xdv
 *.fls
+*.out
 _minted-*/
 build/
 
