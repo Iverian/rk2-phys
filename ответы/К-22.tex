@@ -1,5 +1,31 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
+	\paragraph{22}
+Спектр операторов $\hat{J}^2$ и $\hat{J}_z$ ($\hat{J}$ -- оператор полного момента импульса).
+
+Запишем уравнение $\hat{J}_z\Psi(\bar r)=J_z\Psi(\bar{r})$ в сферических координатах $\left(\bar{r}=\{r,\theta,\varphi\}\right):$
+\begin{gather*}
+	-ih\frac{\partial\Psi}{\partial\varphi}=J_z\Psi\Rightarrow\\
+	\Psi(\varphi)=C\exp\left[iJ_z\cdot \varphi/h\right]=C\cdot e^{im\varphi},\text{ где } m=\frac{J_z}{h}.
+\end{gather*}	
+
+Функция $\Psi(\varphi)$ должна быть периодической, т.е. при повороте на угол 2π ничего не меняется. Следовательно:
+\begin{gather*}
+	e^{im\varphi}=e^{im(\varphi+2π)}.
+\end{gather*}
+Это равенство справедливо только при $m\in\mathbb Z$ - СЗ оператора $\hat{J}_z.$\\
+
+Перейдём к уравнению $\hat{J}^2\Psi=J^2\Psi$ в сферических координатах:
+\begin{gather*}
+	\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial\Psi}{\partial\theta}\right)+\frac{\partial^2\Psi}{\sin^2\theta\partial\varphi^2}+\lambda\Psi=0,\text{ где }\lambda=\frac{J^2}{h^2}
+\end{gather*}
+Мы пришли к никому не известному уравнению Штурма-Лиувилля, которое решается методом разделения переменных Фурье: $\Psi\left(\theta,\varphi\right)=F(\theta)\Phi(\varphi).$ Конечные решения этого ур-я $\left(\vert\Psi(\theta,\varphi)\vert<\infty\right)$ получаются только при положительных целых чётных λ (СЗ оператора $\hat{J}^2$):
+\begin{gather*}
+	\lambda=\frac{J^2}{h^2}=l(l+1),\text{ где }l\in\mathbb{N}\cup0
+\end{gather*}
+СФ этого оператора можно нумеровать квантовым числом $l$, однако каждому СЗ $h^2l(l+1)$ соответствует $2l+1$ разных СФ $\Psi_l$, различающихся проекциями момента импульса на ось $Z.$ Чтобы их отличать, вводят дополнительный нумератор $m : \vert m\vert\le l$
+
+
 
 \end{document}
