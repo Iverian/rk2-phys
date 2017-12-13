@@ -2,4 +2,32 @@
 
 \begin{document}
 
+\paragraph{К-08}
+Получите и прокомментируйте обобщенное соотношение неопределённостей Хайзенберга величин $A$ и $B$: $\Delta A\Delta B \ge \frac{\left|\left<\hat{A},\hat{B}\right>\right|}{2}$
+
+Квантовая механика позволяет нам определить вероятность того или иного результата эксперимента и средние значения физических величин. Пусть $\hat{A}|j\rangle=a_j|j\rangle$. Тогда если состояние системы определяется вектором $|c\rangle$, то:
+$$
+\langle A \rangle =\langle c|\hat{A}|c \rangle = \sum_j \langle c | \hat{A}|j\rangle \langle j|c\rangle = \sum_j \langle c| a_j|j\rangle \langle j|c\rangle = \sum_j\langle c|j\rangle \langle | c \rangle a_j=\sum_j |c_j|^2a_j
+$$
+$|c_j|^2$ --- вероятность того, что если до измерения система находится в состоянии $|c\rangle$, то сразу после измерения она окажется в состоянии $|j\rangle$.\\
+
+Определим неопределенности: $\Delta A \equiv \sigma[A]\equiv \sqrt{\langle (A-\langle A\rangle)^2\rangle} = \sqrt{\langle A^2-2A\langle A \rangle+\langle A \rangle^2\rangle}=\sqrt{\langle A^2\rangle-\langle A\rangle^2}$, $\sigma [A]$ --- среднее квадратичное отклонение случайной величины $A$.\\
+$$
+(\Delta A)^2=\langle (A-\langle A\rangle )^2\rangle = \langle c|(A-\langle A\rangle)(A-\langle A\rangle )|c=\langle c|(A^+-\langle A\rangle)|d\rangle = \langle d|d\rangle 
+$$
+Аналогично, $(\Delta B)^2=\langle f| f \rangle$. Неравенство Шварца:
+$$
+(\Delta A)^2 (\Delta B)^2 = \langle d|d\rangle \langle f|f \rangle \geqslant |\langle d|f\rangle|^2 = \langle d|f\rangle \langle f|d\rangle
+$$
+$$
+\langle d|f \rangle = \langle c|(\hat{A}-\langle A \rangle)(\hat{B}-\langle B) \rangle | c \langle =\langle AB \rangle -\langle A \rangle \langle B \rangle
+$$
+$$
+\langle f|d \rangle = \langle BA \rangle -\langle B \rangle \langle A \rangle
+$$
+$$
+|\langle d|f \rangle |^2 = Re^2 + Im^2 \geqslant Im^2 = \left \langle \frac{[A, B]}{2i}\right \rangle^2 
+$$
+Мораль: $\Delta A \Delta B \geqslant \left|\left \langle \frac{[\hat{A}, \hat{B}]}{2}\right \rangle \right|$
+
 \end{document}
