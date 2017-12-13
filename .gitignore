@@ -9,6 +9,7 @@
 *.out
 _minted-*/
 build/
+*(busy)
 
 ## Misc
 
