@@ -1,5 +1,54 @@
-\documentclass[__main__.tex]{subfiles}
+\input{__preamble__}
 
 \begin{document}
+\paragraph{Э-17}
+Физический смысл компонент симметризованного тензора энергии-импульса электромагнитного поля. Вектор Пойнтинга и теорема Пойнтинга.\\
 
+\begin{definition}
+	Вектор Пойтинга: $\vec{S} = [\vec{E} \vec{B}]$ 
+\end{definition}
+
+\begin{theorem}
+	Теорема Пойтинга:\\
+	Если коротко, то теорема описывает закон сохранения энергии электромагнитного поля
+	\begin{gather*}
+		\frac{\delta\varepsilon}{\delta t}+\nabla\vec{S} = -\vec{\gamma}\cdot\vec{E}
+	\end{gather*}
+	где $\varepsilon = \frac{E^2+B^2}{2}$
+\end{theorem}
+Канонический тензор энергии-импульса имеет вид:
+ \begin{gather*}
+\underset{emf}{T}^{\mu\nu} = F^{\mu\lambda}\partial^\nu A_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+\end{gather*}
+\begin{gather*}
+\underset{emf}{T^{\mu\nu}} - F^{\mu\lambda}\partial_\lambda A^\nu = F^{\mu\lambda}(\partial^\nu A_x - \partial_\lambda A^\nu) - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu} = F^{\mu\lambda}F^\nu_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}\equiv \underset{emf}{\Theta}^{\mu\nu}
+\end{gather*}
+ $\underset{emf}{\Theta}^{\mu\nu}$ - симметризованый тензор энергии-импульса электромагнитного поля.\\
+Выразим компоненты тензора $T^{\mu\nu}$ через напряжённости электрического и магнитного полей. C помощью значений 
+$F_{\mu\nu}= 
+\begin{bmatrix}
+	0 & E_x & E_y & E_z\\
+-E_x & 0 & -H_z & H_y\\
+-E_y & H_z & 0 & -H_x\\
+-E_z & -H_y & H_x & 0
+\end{bmatrix},
+\quad F^{\mu\nu} = 
+\begin{bmatrix}
+0 & -E_x & -E_y & -E_z\\
+E_x & 0 & -H_z & H_y\\
+E_y & H_z & 0 & -H_x\\
+E_z & -H_y & H_x & 0
+\end{bmatrix}
+$
+легко убедиться в том, что $T^{00}$ совпадает, как и следовало, с плотностью энергии $W = \frac{E^2 + H^2}{8\pi}$, а компоненты $cT^{0\alpha}$ - с компонентами вектора Пойнтинга $S = \frac{c}{4\pi}[EH]$. Пространственные же компоненты $T^{\alpha\beta}$ образуют трёхмерный тензор с составляющими
+\begin{gather*}
+	\sigma_{xx} = \frac{1}{8\pi}(E^2_y + E^2_z - E^2_x + H^2_y + H^2_z - H^2_x),\\
+	\sigma_{xy} = -\frac{1}{4\pi}(E_xE_y + H_xH_y)
+\end{gather*}
+и т. д., или
+\begin{gather*}
+	\sigma_{\alpha\beta} = \frac{1}{4\pi}\{-E_\alpha E_\beta - H_\alpha H_\alpha + \frac{1}{2}\delta_{\alpha\beta}(E^2 + H^2)\}.
+\end{gather*}
+ Этот трёхмерный тензор называют максвелловским тензором напряжений.
+ 
 \end{document}
