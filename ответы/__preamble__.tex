@@ -8,22 +8,20 @@
 
 \usepackage{fontspec,
             polyglossia,
-            graphicx}
-
-\usepackage{amsmath,
+            graphicx,
+            amsmath,
             amsthm,
-            amssymb}
-
-\usepackage{unicode-math,
-            tensor}
-
-\usepackage{wrapfig,
+            amssymb,
+            unicode-math,
+            tensor,
+            wrapfig,
             hyperref,
             multicol,
             multirow,
             tabularx,
             booktabs,
-            subfiles}
+            subfiles,
+            comment}
 
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
@@ -51,7 +49,7 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Теор.}[section]
 
-\graphicspath{{./img/}}
+\graphicspath{{img/}}
 \everymath{\displaystyle}
 
 \newcommand{\llabel}[1]{\label{\thesubsection:#1}}
