@@ -1,5 +1,133 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
+\paragraph{Э-19}
+Система уравнений Максвелла-Лоренца, материальные уравнения, условия на границе раздела двух диэлектриков, магнетиков\\
+
+Вывод для Гениев!\\
+Формулы для пацанов!\\
+\begin{gather*}
+	\oint Edl = \frac{1}{c}\frac{\partial}{\partial t}\int Hdf,\\
+	\oint H df = 0.\\
+	div E = 4\pi\rho.\\
+	rot H = \frac{1}{c}\frac{\partial E}{\partial t} + \frac{4\pi}{c}j.\\
+\end{gather*}
+
+ \textbf{Материальные уравнения}
+
+\begin{gather*}
+	\mathbf {D} =\varepsilon _{0}\varepsilon \mathbf {E} =\varepsilon _{0}(1+\chi _{e})\mathbf {E} \\
+	\mathbf {B} =\mu _{0}\mu \mathbf {H} =\mu _{0}(1+\chi _{m})\mathbf {H} \\
+\end{gather*}
+$\varepsilon-$ относительная диэлектрическая проницательность\\
+$\mu-$ относительная магнитная проницаемость\\
+$\chi _{e}-$ диэлектрическая восприимчивость\\
+$\chi _{m}-$ магнитная восприимчивость
+
+ \textbf{Граничные уравнения}\\
+
+ \begin{gather*}
+	(\mathbf {E} _{1}-\mathbf {E} _{2})\times \mathbf {n} _{1-2}=\mathbf {0} \\
+{\displaystyle (\mathbf {H} _{1}-\mathbf {H} _{2})\times \mathbf {n} _{1-2}=\mathbf {j} _{s}} 
+\end{gather*}
+$\mathbf {n} _{1-2}$ - единичный вектор нормали к поверхности, направленный из среды 1 в среду 2 и имеющий размерность, обратную длине\\ 
+$\mathbf {{j} _{s}}$ - плотность поверхностных свободных токов вдоль границы\\
+
+\textbf{Вывод Системы уравнений Максвелла-Лоренца в вакууме(для лохов)}\\
+
+\begin{gather*}
+	H = rot A, \quad E = -\frac{1}{c}\frac{\partial A}{\partial t} - grad \varphi,
+\end{gather*}
+где $H$ - напряжённость магнитного поля, $E$ - напряжённость электрического поля,
+$A$ - векторный потенциал поля,
+$\varphi$ - скалярный потенциал.
+
+Определим $rot E$:
+\begin{gather*}
+	rot E = -\frac{1}{c}\frac{\partial}{\partial t}rot A - rot grad \varphi.
+\end{gather*}
+
+Ротор градиента равен нулю.
+\begin{gather}
+	\label{e-02-rotE}
+	rot E = -\frac{1}{c}\frac{\partial H}{\partial t}.
+\end{gather}
+
+Возьмём дивергенцию от обеих частей уравнения $rot A = H$ (дивергенция ротора равна нулю):
+\begin{gather}
+	\label{e-02-divH}
+	div H = 0
+\end{gather}
+
+Уравнения $\ref{e-02-rotE}$ и  $\ref{e-02-divH}$ составляют первую пару уравнений Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Edl = \frac{1}{c}\frac{\partial}{\partial t}\int Hdf,\\
+	\oint H df = 0.
+\end{gather*}
+
+Для вывода второй пары уравнений Максвелла нам нужно знать, что действие:
+\begin{gather}
+	\label{e-02-S}
+	S = -\sum\int mcds - \frac{1}{c^2}\int A_ij^id\Omega - \frac{1}{16\pi c}\int F_{ik}F^{ik}d\Omega.
+\end{gather}
+
+При нахождении уравнений поля их принципа наименьшего действия мы должны считать заданным движения зарядов и должны варьировать только потенциалы поля(играющие здесь роль "координат" системы); при нахождении уравнений движения мы, наоборот, считали поле заданным и варьировали траекторию частицы.
+Поэтому вариация первого члена в $\ref{e-02-S}$ равна теперь нулю, а во втором не должен варьироваться ток $j^i$. Таким образом, 
+\begin{gather*}
+	\delta S = -\frac{1}{c}\big[\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\delta F_{ik}\big]d\Omega = 0
+\end{gather*}
+(при варьировании во втором члене учтено, что $F^{ik}\delta F_{ik} \equiv F_{ik}\delta F^{ik}$). Подставляя
+\begin{gather*}
+	F_{ik} = \frac{\partial A_k}{\partial x^i} - \frac{\partial A_i}{\partial x^k},
+\end{gather*}
+имеем:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int \big\{\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^i}\delta A_k - \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Во втором члене меняем местами индексы $i$ и $k$, по которым производится суммирование, и, кроме того, заменяем $F_{ki}$ на $-F_{ik}$.\\
+Тогда мы получим:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i\delta A_i - \frac{1}{4\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Второй из этих интегралов берём по частям, т.е. применяем теорему Гаусса:
+\begin{gather}
+	\label{e-02-deltaS}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k}\big\}\delta A_id\Omega - \frac{1}{4\pi c}\int F^{ik}\delta A_idS_k\big|.
+\end{gather}
+Во втором члене  мы должны взять его значение на пределах интегрирования. Пределами интегрирования по координатам является бесконечность, где поле исчезает. На пределах же интегрирования по времени, т.е. в заданные начальный и конечный моменты времени, вариация потенциалов равна нулю, так как по смыслу принципа наименьшего действия потенциалы в эти моменты заданы. Таким образом, второй член в $\ref{e-02-deltaS}$ равен нулю, и мы находим:
+\begin{gather*}
+	\int(\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k})\delta A_id\Omega = 0.
+\end{gather*}
+Ввиду того, что по смыслу принципа наименьшего действия вариации $\delta A_i$ произвольны, нулю должен равняться коэффициент при $\delta A_i$, т.е.
+\begin{gather}
+	\label{e-02-deltaF}
+	\frac{\partial F^{ik}}{\partial x^k} = -\frac{4\pi}{c}j^i.
+\end{gather}
+Перепишем эти четыре ($i = 0, 1, 2, 3$) уравнения в трёхмерной форме. При $i=1$ имеем:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial F^{10}}{\partial t} + \frac{\partial F^{11}}{\partial x} + \frac{\partial F^{12}}{\partial y} + \frac{\partial F^{13}}{\partial z} = -\frac{4\pi}{c}j^1.
+\end{gather*}
+Подставляя значения составляющих тензора $F^{ik}$, находим:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial E_x}{\partial t} - \frac{\partial H_z}{\partial y} + \frac{\partial H_y}{\partial z} = -\frac{4\pi}{c}j_x.
+\end{gather*}
+Вместе с двумя следующими $(i = 2, 3)$ уравнениями они могут быть записаны как одно векторное:
+\begin{gather}
+	\label{e-02-rotH}
+	rot H = \frac{1}{c}\frac{\partial E}{\partial t} + \frac{4\pi}{c}j.
+\end{gather}
+Наконец, уравнение с $i=0$ даёт:
+\begin{gather}
+\label{e-02-divE}
+	div E = 4\pi\rho.
+\end{gather}
+Уравнения $\ref{e-02-rotH}$ и $\ref{e-02-divE}$ и составляют вторую пару уравнения Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Hdl = \frac{1}{c}\frac{\partial}{\partial t}\int Edf + \frac{4\pi}{c}\int jdf,\\
+	\oint Edf = 4\pi\int \rho dV.
+\end{gather*}
+ Уравнения Максвелла являются основными уравнениями электродинамики.\\
 
 \end{document}

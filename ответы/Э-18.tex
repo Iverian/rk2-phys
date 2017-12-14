@@ -1,5 +1,51 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
+\paragraph{Э-19}
+	Покажите, что канонический тензор энергии-импульса электромагнитного
+поля 
+$$
+T^{\mu\nu}=F^{\mu\lambda}\partial^\nu A_\lambda-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+$$
+не является калибровочно инвариантным в отличие от симметризованного тензора энергии-импульса электромагнитного поля 
+$$
+\Theta^{\mu\nu} = T^{\mu\nu}-F^{\mu\lambda}\partial_{\lambda}A^{\nu}
+$$.
+\textbf{Калибровочные преобразования}\\
+$$\mathcal A_\mu \longrightarrow \mathcal A'_\mu \equiv \mathcal A_\mu +\partial_\mu f(x)$$
+Матерь божья, тут дичь. Если вы читаете это, то пререпишите ниженаписанное ниже, запишите определение этих преобразований, и попытайтесь их применить...\\
+Помните, что по временной компоненте производная отрицательная, к примеру:\\ 
+\textbf{Инвариантность тензора Максвелла относительно калибровочных преобразований(это не писать, это пример)}\\
+$$F_{\mu\nu} \longrightarrow F'_{\mu\nu} \equiv \partial_\mu \mathcal A'_\nu - \partial_\nu \mathcal A'_\mu = \partial_\mu \mathcal A_\nu + \partial_\mu \partial_\nu f(x) - \partial_\nu \mathcal A_\mu - \partial_\nu\partial_\mu f(x) = F_{\mu\nu}$$
+\textbf{Связь полей $\vec E$ и $\vec B$ с 4-векторным потенциалом $A^\mu$}\\
+\begin{flalign*}
+\left. \begin{matrix}
+-E_x = F_{01} = \partial_0\mathcal A_1 - \partial_1 \mathcal A_0\\
+-E_y = F_{02} = \partial_0\mathcal A_2 - \partial_2 \mathcal A_0\\
+-E_z = F_{03} = \partial_0\mathcal A_3 - \partial_3 \mathcal A_0\\
+\end{matrix}\right\}& \qquad \vec E = -\nabla\phi - \partial_t \vec \mathcal A\\
+\left. \begin{matrix}
+B_x = F_{23} = \partial_2\mathcal A_3 - \partial_3 \mathcal A_2\\
+-B_y = F_{13} = \partial_1\mathcal A_3 - \partial_3 \mathcal A_1\\
+B_z = F_{12} = \partial_1\mathcal A_2 - \partial_2 \mathcal A_1\\
+\end{matrix}\right\}& \qquad \vec B = \nabla\times \vec \mathcal A
+\end{flalign*}
+\begin{gather*}
+p_\alpha = (- \mathcal E, \vec p)
+\frac{dp_\alpha}{dr} = qF_{\alpha\beta}\frac{dx^\beta}{dr};\\
+dr = \sqrt{1-v^2}dt = \frac{dt}{\gamma} \rightarrow \gamma\frac{dp_\alpha}{dt} = qF_{\alpha\beta}\gamma\frac{dx^\beta}{dt} \rightarrow \frac{dp_\alpha}{dt} = qF_{\alpha\beta}\frac{dx^\beta}{dt};\\
+\frac{d}{dt}\left(\begin{matrix}-\mathcal E\\ p_x\\p_y\\p_z\end{matrix}\right) = 
+q\left(\begin{matrix}
+0&-E_x&-E_y&-E_z\\
+E_x&0&B_z&-B_y\\
+E_y&-B_z&0&B_x\\
+E_z&B_y&-B_x&0
+\end{matrix}\right)\left(\begin{matrix}1\\v_x\\v_y\\v_z\end{matrix}\right)
+\end{gather*}
+или:
+\begin{gather*}
+\frac{d\mathcal E}{dt} = q\vec E\cdot \vec v\\
+\frac{d\vec p}{dt} = q\vec E + q\vec v \times \vec B (\text{Сила Лоренца})
+\end{gather*}
 
 \end{document}

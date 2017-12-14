@@ -1,9 +1,10 @@
 \documentclass[12pt]{article}
 
 \usepackage[a4paper,
-            total={170mm,255mm},
-            left=10mm,
-            top=15mm]
+            left=2cm,
+            right=1cm,
+            top=2cm,
+            bottom=2cm]
             {geometry}
 
 \usepackage{fontspec}
@@ -51,7 +52,11 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Теор.}[section]
 
-\graphicspath{{img/}}
+\addto\captionsrussian{
+  \renewcommand{\proofname}{Док-во}
+}
+
+\graphicspath{{./img/}}
 \everymath{\displaystyle}
 
 \newcommand{\llabel}[1]{\label{\thesubsection:#1}}
