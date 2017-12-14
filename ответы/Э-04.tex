@@ -2,4 +2,109 @@
 
 \begin{document}
 
+\paragraph{Э-04}
+Полевая версия теоремы Нётер. Сохраняющийся нётеровский ток. Канонический и симметризованный тензоры энергии импульса электромагнитного поля. Физический смысл компонент симметризованного тензора энергии-импульса электромагнитного поля.\\
+
+\begin{theorem}[Нётер]
+    Инвариантность действия относительно некоторой непрерывной группы симметрии приводит к соответствующему закону сохранения.
+\end{theorem}
+
+Получим выражение для нётеровского тока.\\
+Пусть задано действие
+$$
+    \mathcal{A}=\int\mathcal{L}\left( \mathcal{A}^\alpha (x),\partial_\beta \mathcal{A}^\alpha(x)\right)dx^4,\\
+$$
+где $dx^4=dt\cdot dx^3,\ \partial_\beta=\frac{\partial}{\partial x^\beta}.$ Тогда, рассмотрев малые вариации $x\prime=x+\delta x, \mathcal{A}(x)\rightarrow\mathcal{A}\prime(x)$ получим вaриацию функционала действия:
+\begin{flalign*}
+    0=&
+    \delta \mathcal{A}\equiv
+    \int_{\Omega\prime}\prime\mathcal{L}\left(\mathcal{A}^{\alpha\prime}(x\prime),\partial_\beta\prime \mathcal{A}^{\alpha\prime}(x\prime)\right)d(x')^4-
+    \int_\Omega\mathcal{L}\left( \mathcal{A}^\alpha (x),\partial_\beta \mathcal{A}^\alpha(x)\right)dx^4
+    =\\
+    =&
+    \int_{\Omega\prime}\prime\left(\mathcal{L}(x)+\delta\mathcal{L}(x)\right)dx^4-
+    \int_\Omega\mathcal{L}\left(x\right)dx^4=
+    \int_\Omega\mathcal{L}(x)\partial_\mu\delta x^\mu dx^4+
+    \int_\Omega\delta\mathcal{L}(x)dx^4
+    =\\
+    =&
+    \int_\Omega\partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)dx^4+
+    \int_\Omega\delta\mathcal{L}(x)dx^4=
+    \left[\delta\mathcal{L}(x)=\tilde{\delta}\mathcal{L}(x)+\partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)\right]
+    =\\
+    =&
+    \int_\Omega\tilde{\delta}\mathcal{L}(x)+2\int_\Omega\partial_\mu\left(\mathcal{L}(x)\delta x^\mu\right)
+\end{flalign*}
+
+Посмотрим на первое подынтегральное слагаемое:
+\begin{flalign*}
+    &
+    \tilde{\delta}\mathcal{L}(x)=
+    \frac{\partial\mathcal{L}}{\partial\mathcal{A}}\tilde{\delta}\mathcal{A}(x)+
+    \frac{\partial\mathcal{L}}{\partial(\partial_\mu\mathcal{A})}\tilde{\delta}(\partial_\mu\mathcal{A}(x))
+    =\\
+    =&
+    \frac{\partial \mathcal{L}}{\partial \mathcal{A}}\tilde{\delta}\mathcal{A}(x)+
+    \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)-
+    \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\right)\tilde{\delta}\mathcal{A}(x)
+    =\\
+    =&
+    0+ \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)
+    \Rightarrow\\
+    \Rightarrow&
+    \int_\Omega\partial_\mu\left(\mathcal{L}(x)\delta x^\mu+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A})}\tilde{\delta}\mathcal{A}(x)\right)dx^4
+    =
+    \left[\tilde{\delta}\mathcal{A}(x)=\delta\mathcal{A}(x)-\partial_\nu\mathcal{A}\delta x^\nu\right]
+    =\\
+    =&
+    \int_\Omega d^4x\partial_\mu\mathcal{J}^\mu
+    \Rightarrow
+    \partial_\mu\mathcal{J}^\mu=0,
+\end{flalign*}
+где $\mathcal{J}^\mu=\left(\mathcal{L}(x)\delta_\nu^\mu-\frac{\partial \mathcal{L}}{\partial (\partial_\mu\mathcal{A}(x))}\partial_\nu\mathcal{A}(x)\right)\delta x^\nu+\frac{\partial\mathcal{L}}{\partial(\partial_\mu\mathcal{A}(x))}\delta\mathcal{A}(x)$ - нётеровский ток\\
+
+Из его же лекций, в которых ничего нет и ничего не понятно следует, что
+$$
+    \mathcal{J}^\mu=-\mathcal{F}_\nu^\mu\epsilon^\nu,
+$$
+где канонический тензор энергии-импульса
+$$
+    \mathcal{F}_\nu^\mu\equiv\frac{\partial \mathcal{L}}{\partial (\partial_\mu \mathcal{A})}\partial_\nu\mathcal{A}-\mathcal{L}\delta_\nu^\mu.
+$$
+
+Канонический тензор энергии-импульса имеет вид:
+\begin{gather*}
+    \underset{emf}{T}^{\mu\nu} = F^{\mu\lambda}\partial^\nu A_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+\end{gather*}
+\begin{gather*}
+    \underset{emf}{T^{\mu\nu}}
+    -
+    F^{\mu\lambda}\partial_\lambda A^\nu
+    =
+    F^{\mu\lambda}(\partial^\nu A_\lambda
+    -
+    \partial_\lambda A^\nu)
+    -
+    \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+    =
+    F^{\mu\lambda}F\indices{^\nu_\lambda}
+    -
+    \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+    \equiv
+    \underset{emf}{\Theta}^{\mu\nu}
+\end{gather*}
+$\underset{emf}{\Theta}^{\mu\nu}$ - симметризованый тензор энергии-импульса электромагнитного поля. В матричном виде имеет вид:
+\begin{gather*}
+\underset{emf}{\Theta^{\mu\nu}} =
+\left[
+\begin{array}{cccc}
+W & S_x & S_y & S_z \\
+S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
+S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
+S_z & \sigma_{zx} & \sigma_{zy} & \sigma_{zz} \\
+\end{array}
+\right],
+\end{gather*}
+где $\vec{S}=\{S_x,S_y,S_z\}=\vec{E}\times\vec{B}$ -- вектор Пойнтинга, $W$ -- плотность энергии, $\sigma_{ij}$ -- тензор напряжений.
+
 \end{document}

@@ -6,24 +6,24 @@
             top=15mm]
             {geometry}
 
-\usepackage{fontspec,
-            polyglossia,
-            graphicx}
+\usepackage{fontspec}
+\usepackage{subfiles}
 
 \usepackage{amsmath,
             amsthm,
-            amssymb}
-
-\usepackage{unicode-math,
+            amssymb,
+            unicode-math,
             tensor}
 
-\usepackage{wrapfig,
+\usepackage{polyglossia,
+            graphicx,
+            wrapfig,
             hyperref,
             multicol,
             multirow,
             tabularx,
             booktabs,
-            subfiles}
+            comment}
 
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
@@ -51,7 +51,7 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Теор.}[section]
 
-\graphicspath{{./img/}}
+\graphicspath{{img/}}
 \everymath{\displaystyle}
 
 \newcommand{\llabel}[1]{\label{\thesubsection:#1}}
