@@ -51,7 +51,11 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Теор.}[section]
 
-\graphicspath{{img/}}
+\addto\captionsrussian{
+  \renewcommand{\proofname}{Док-во}
+}
+
+\graphicspath{{./img/}}
 \everymath{\displaystyle}
 
 \newcommand{\llabel}[1]{\label{\thesubsection:#1}}

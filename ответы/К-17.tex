@@ -5,6 +5,12 @@
 \paragraph{К-17}
 Определите характер зависимости от температуры электрической восприимчивости диэлектрика, состоящего из полярных молекул.\\
 
+\textbf{Резюме:} диэлектрическая восприимчивость $\kappa$ зависит от температуры диэлектрика следующим образом:
+\begin{gather}
+\Delta\kappa = -\frac{8\pi\varepsilon_0 C_E}{E^2}\left( T_1\ln T_1 - T_0\ln T_0 + \Delta T \right),
+\end{gather}
+где $C_E$ -- теплоемкость диэлектрика при постоянной напряженности электрического поля $E$.\\
+
 Рассмотрим диэлектрик во внешнем электрическом поле, создаваемом одиночным проводником с зарядом $q$ и 4-х вектором потенциала $A^\mu=(\varphi,\vec{A})$,где $\varphi$ -- скалярный потенциал. Положим, что поле не меняется со временем (стационарно), т.е. $\partial_t A^\mu=0$. Для того, чтобы увеличить его заряд на бесконечно малую величину $\delta q$, необходима работа:
 \begin{gather}
 \delta R = \varphi\delta q,\llabel{eq:work}
@@ -80,7 +86,15 @@ dT = - \frac{TE}{4\pi\varepsilon_0C_E}\frac{\partial\varepsilon}{\partial T}dE
 \Longleftrightarrow\\
 \Longleftrightarrow
 &
-dT = - \frac{TE}{4\pi\varepsilon_0C_E}\frac{\partial\kappa}{\partial T}dE,
+dT = - \frac{TE}{4\pi\varepsilon_0C_E}\frac{\partial\kappa}{\partial T}dE
+\Longleftrightarrow\\
+\Longleftrightarrow
+&
+\frac{\partial\kappa}{\partial T} = -8\pi\varepsilon_0C_E\frac{\ln T}{E^2}
+\Longleftrightarrow\\
+\Longleftrightarrow
+&
+\Delta\kappa = -\frac{8\pi\varepsilon_0 C_E}{E^2}\left( T_1\ln T_1 - T_0\ln T_0 + \Delta T \right).
 \end{flalign}
 величина $\frac{\partial\kappa}{\partial T}$ обычно отрицательна.
 
