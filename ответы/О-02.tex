@@ -38,7 +38,7 @@ $$
 $$
 отыщем интенсивность $I$ как квадрат модуля светового вектора:
 \begin{flalign}
-\label{o-02-intense}
+\llabel{o-02-intense}
 \begin{split}
 E^2 &= \left(\vec{E}_{10}e^{i\varphi_1}+\vec{E}_{20}e^{i\varphi_2}\right)
        \left(\vec{E}_{10}e^{-i\varphi_1}+\vec{E}_{20}e^{-i\varphi_2}\right) =\\
@@ -46,9 +46,9 @@ E^2 &= \left(\vec{E}_{10}e^{i\varphi_1}+\vec{E}_{20}e^{i\varphi_2}\right)
 \end{split}
 \end{flalign}
 
-определим $\angle(\vec{E}_{10},\vec{E}_20) = \alpha$, тогда (\ref{o-02-intense}) примет вид:
+определим $\angle(\vec{E}_{10},\vec{E}_20) = \alpha$, тогда (\lref{o-02-intense}) примет вид:
 \begin{flalign}
-\label{o-02-alpha}
+\llabel{o-02-alpha}
 I = I_1 + I_2 + 2\sqrt{I_1 I_2}\cos(\alpha)\langle\cos(\Delta \varphi)\rangle,
 \end{flalign}
 где $\langle\cos(\Delta \varphi)\rangle$ - разность фаз, усредненная по времени наблюдения прибора
@@ -57,9 +57,9 @@ I = I_1 + I_2 + 2\sqrt{I_1 I_2}\cos(\alpha)\langle\cos(\Delta \varphi)\rangle,
 }
 , $I_1 = E_1^2$, $I_2 = E_2^2$.
 
-Из второго условия положим $\cos(\alpha)\approx 1$, тогда (\ref{o-02-alpha}) примет вид:
+Из второго условия положим $\cos(\alpha)\approx 1$, тогда (\lref{o-02-alpha}) примет вид:
 \begin{gather}
-\label{o-02-mainint}
+\llabel{o-02-mainint}
 I = I_1 + I_2 + 2\sqrt{I_1 I_2}\langle\cos(\Delta \varphi)\rangle
 \end{gather}
 где $2\sqrt{I_1 I_2}\langle\cos(\Delta \varphi)\rangle$ называется интерференционным членом.
@@ -74,7 +74,7 @@ $$
 где $k$ - волновое число в вакууме, $n_i$ - коэффициент преломления среды, $L$ называется оптической длиной пути.
 Тогда для двух волн одной частоты с фазами $\varphi_1$ и $\varphi_2$ разность их фаз примет вид:
 \begin{gather}
-\label{o-02-phasediff}
+\llabel{o-02-phasediff}
 \Delta \varphi = k(L_2 - L_1) = k \Delta =
 (k = \frac{2\pi}{\lambda}) =
 \frac{2\pi}{\lambda}\Delta,
@@ -84,14 +84,14 @@ $$
 \begin{wrapfigure}[14]{R}{0.4\linewidth}
 	\includegraphics[width=1\linewidth]{img/o-02}{}
 	\caption{Общая схема наблюдения интерференции}
-	\label{o-02-scheme}
+	\llabel{o-02-scheme}
 \end{wrapfigure}
  
 \textbf{Общая схема наблюдения интерференции.}
 Световые лучи от источника $S$ проходят через две щели на экране $\text{Э}_1$, образуя два источника $S_1$ и $S_2$. Лучи от этих источников попадают на экран $\text{Э}_2$, на котором наблюдается интерференционная картина в виде плавно переходящих друг в друга светлых полос, перпендикулярных плоскости рисунка.
 
-Отыщем вид (\ref{o-02-mainint}) для этой схемы, для этого найдем $\Delta = L_2 - L_1$. Из
-$\triangle S_1AP$ и $\triangle S_2BP$ отыщем $L_1$ и $L_2$ (см. Рис. \ref{o-02-scheme}):
+Отыщем вид (\lref{o-02-mainint}) для этой схемы, для этого найдем $\Delta = L_2 - L_1$. Из
+$\triangle S_1AP$ и $\triangle S_2BP$ отыщем $L_1$ и $L_2$ (см. Рис. \lref{o-02-scheme}):
 $$
 L_1 = \sqrt{l^2 + \left(x-\frac{a}{2}\right)^2}, \qquad
 L_2 = \sqrt{l^2 + \left(x+\frac{a}{2}\right)^2},
@@ -103,17 +103,17 @@ L_2 \approx l + \frac{\left(x+a/2\right)^2}{2l},
 \end{gather*}
 тогда
 \begin{gather}
-\label{o-02-schemediff}
+\llabel{o-02-schemediff}
 \displaystyle \Delta = L_2 - L_1 = \frac{xa}{l}
 \end{gather}
-Запишем формулу для интенсивности (\ref{o-02-mainint}) с учетом (\ref{o-02-schemediff}):
+Запишем формулу для интенсивности (\lref{o-02-mainint}) с учетом (\lref{o-02-schemediff}):
 \begin{gather*}
 I = I_1 + I_2 + 2\sqrt{I_1 I_2}\cos\left(\frac{2\pi}{\lambda}\Delta\right) =
     I_1 + I_2 + 2\sqrt{I_1 I_2}\cos\left(\frac{\pi x a}{\lambda l}\right),
 \end{gather*}
 для $I_1 = I_2 = I_0$:
 \begin{gather}
-\label{o-02-intensesch}
+\llabel{o-02-intensesch}
 I = 2I_0\left(1 + \cos\left(\frac{2\pi}{\lambda}\Delta\right)\right) =
 4I_0\cos^2\left(\frac{\pi xa}{\lambda l}\right),
 \end{gather}
@@ -121,17 +121,17 @@ I = 2I_0\left(1 + \cos\left(\frac{2\pi}{\lambda}\Delta\right)\right) =
 \begin{wrapfigure}[6]{R}{0.4\linewidth}
 	\includegraphics[width=1\linewidth]{img/o-02_1}{}
 	\caption{К пространственной когерентности}
-	\label{o-02-prostra}
+	\llabel{o-02-prostra}
 \end{wrapfigure}
 
 \textbf{Пространственная когерентность.}
-Рассмотрим общую схему интерференции с новым источником $S^*$, смещенными на $h/2$ относительно старого $S$ (см. Рис. \ref{o-02-prostra}). Положим, что для расстояния до экрана $\text{Э}_1$ $r$ выполняется: $a\ll r, h\ll r$. Тогда аналогично предыдущему пункту получим добавочную разность хода до экрана $\text{Э}_1$: $\Delta^* = \frac{ha}{2r}$. Добавочная разность фаз согласно (\ref{o-02-phasediff}) примет вид $\displaystyle\psi = \frac{2\pi}{\lambda}\Delta^*$, тогда перепишем (\ref{o-02-intensesch}):
+Рассмотрим общую схему интерференции с новым источником $S^*$, смещенными на $h/2$ относительно старого $S$ (см. Рис. \lref{o-02-prostra}). Положим, что для расстояния до экрана $\text{Э}_1$ $r$ выполняется: $a\ll r, h\ll r$. Тогда аналогично предыдущему пункту получим добавочную разность хода до экрана $\text{Э}_1$: $\Delta^* = \frac{ha}{2r}$. Добавочная разность фаз согласно (\lref{o-02-phasediff}) примет вид $\displaystyle\psi = \frac{2\pi}{\lambda}\Delta^*$, тогда перепишем (\lref{o-02-intensesch}):
 \begin{gather}
-\label{o-02-intensetwo}
+\llabel{o-02-intensetwo}
 I = 2I_0\left(1+\cos\left(\psi + \frac{2\pi}{\lambda}\Delta\right)\right),
 \end{gather}
 
-Теперь положим источник отрезком $[-h/2, h/2]$ и отыщем интенсивность, для этого усредним (\ref{o-02-intensetwo}) по фазе $\psi$ от $-\Delta\psi/2$ (нижний конец) до $\Delta\psi/2$ (верхний).
+Теперь положим источник отрезком $[-h/2, h/2]$ и отыщем интенсивность, для этого усредним (\lref{o-02-intensetwo}) по фазе $\psi$ от $-\Delta\psi/2$ (нижний конец) до $\Delta\psi/2$ (верхний).
 \begin{flalign*}
 \begin{split}
 \langle I \rangle &=
@@ -148,7 +148,7 @@ I = 2I_0\left(1+\cos\left(\psi + \frac{2\pi}{\lambda}\Delta\right)\right),
 \right),
 \end{split}
 \end{flalign*}
-при $\Delta\psi \rightarrow 0$ $G(\Delta\psi) \rightarrow 1$ (первый замечательный предел), т.е получаем формулу (\ref{o-02-intensesch}) для точечного источника.
+при $\Delta\psi \rightarrow 0$ $G(\Delta\psi) \rightarrow 1$ (первый замечательный предел), т.е получаем формулу (\lref{o-02-intensesch}) для точечного источника.
 Отыщем значение $\Delta\psi$ при котором интерференционная картина пропадает. Это, очевидно, происходит при минимальном $\Delta\psi$ таком, что $G(\Delta\psi) = 0$. Т.е
 \begin{flalign*}
 \begin{split}
@@ -174,7 +174,7 @@ $\displaystyle\delta \phi = k \Delta = \frac{2\pi}{\lambda}\Delta$ можно с
 Световое излучение удовлетворяющее условию $\omega \in U_{\delta\omega}(\omega_0), |\delta\omega| \ll \omega$ называется квазимонохроматическим.
 \end{definition}
 
-Тогда для (\ref{o-02-intensesch}) пусть излучение источника $S$ имеет волновые числа в $(k_0-\delta k/2, k_0+\delta k/2)$ -- интервале шириной $\delta k$, из $\displaystyle k =\frac{2\pi}{\lambda}$ следует, что такое излучение квазимонохроматическое. Тогда из (\ref{o-02-intensesch}) найдем среднее значение интенсивности в этом случае.
+Тогда для (\lref{o-02-intensesch}) пусть излучение источника $S$ имеет волновые числа в $(k_0-\delta k/2, k_0+\delta k/2)$ -- интервале шириной $\delta k$, из $\displaystyle k =\frac{2\pi}{\lambda}$ следует, что такое излучение квазимонохроматическое. Тогда из (\lref{o-02-intensesch}) найдем среднее значение интенсивности в этом случае.
 \begin{flalign*}
 \begin{split}
 \langle I \rangle
@@ -208,11 +208,11 @@ $\delta \lambda$, отсюда и очевидна \textit{связь време
 \begin{wrapfigure}[17]{R}{0.4\linewidth}
 	\includegraphics[width=1\linewidth]{img/o-02_2}
 	\caption{Схема интерференции в тонких пленках}
-	\label{o-02-slim}
+	\llabel{o-02-slim}
 \end{wrapfigure}
 
 \textbf{Интерференция в тонких пленках}
-Рассмотрим тонкую пленку с показателем преломления $n_2$, на которую падают лучи света из области с показателем преломления $n_1$ и которая покрывает подложку с показателем преломления $n_3$ (см. Рис. \ref{o-02-slim}).
+Рассмотрим тонкую пленку с показателем преломления $n_2$, на которую падают лучи света из области с показателем преломления $n_1$ и которая покрывает подложку с показателем преломления $n_3$ (см. Рис. \lref{o-02-slim}).
 
 Выделим луч $1$, падающий на верхнюю поверхность пленки в $A$ под углом $\varphi_1$. Часть его отражается, а часть преломляется с углом преломления $\varphi_2$. Этот луч отражается в $B$ (пренебрежем преломленным лучом), приходит в $C$ и вновь преломляется, образуя луч $1'$.
 
