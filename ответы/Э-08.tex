@@ -1,5 +1,163 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
+\paragraph{Э-08}
+4-векторный потенциал и тензор Максвелла. Связь полей $\vec{E}$ и $\vec{B}$ с 4-векторным по-
+тенциалом $A_μ$. Система уравнений Максвелла-Лоренца.\
 
+
+
+\begin{definition}
+	Свойства поля характеризуются 4-вектором $A_i$, так называемым 4-потенциалом, компоненты которого являются функциями координат и времени. Эти величины входят в действие ввиде члена:
+	$$-\frac{e}{c}\int_{a}^{b}A_idx^i$$
+	где $A_i$ берутся в точках мировой линии частицы. 
+\end{definition}
+
+\begin{definition}
+	Тензором Максвелла называется: 
+	$$F_{\alpha\beta}=
+	\begin{pmatrix}
+	0 & -E_x & -E_y & -E_z\\
+	E_x & 0 & B_z & -B_y\\
+	E_y & -B_z & 0 & B_x\\
+	E_z & B_y & -B_y & 0
+	\end{pmatrix}$$
+\end{definition}
+
+где $\bar E$ - вектор напряжения электрического поля, а $\bar B$ - магнитного.
+Каждая компонента считается как:
+$$
+F_{\alpha\beta}=\frac{\partial A_\beta}{\partial x^{\alpha}}
+-\frac{\partial A_\alpha}{\partial x^{\beta}},
+$$
+где $A$ - действие.
+
+
+\textbf{Связь полей $\vec E$ и $\vec B$ с 4-векторным потенциалом $A^\mu$}\\
+\begin{flalign*}
+	\left. \begin{matrix}
+		-E_x = F_{01} = \partial_0\mathcal A_1 - \partial_1 \mathcal A_0\\
+		-E_y = F_{02} = \partial_0\mathcal A_2 - \partial_2 \mathcal A_0\\
+		-E_z = F_{03} = \partial_0\mathcal A_3 - \partial_3 \mathcal A_0\\
+	\end{matrix}\right\}& \qquad \vec E = -\nabla\phi - \partial_t \vec \mathcal A\\
+	\left. \begin{matrix}
+		B_x = F_{23} = \partial_2\mathcal A_3 - \partial_3 \mathcal A_2\\
+		-B_y = F_{13} = \partial_1\mathcal A_3 - \partial_3 \mathcal A_1\\
+		B_z = F_{12} = \partial_1\mathcal A_2 - \partial_2 \mathcal A_1\\
+	\end{matrix}\right\}& \qquad \vec B = \nabla\times \vec \mathcal A
+\end{flalign*}
+\begin{gather*}
+	p_\alpha = (- \mathcal E, \vec p)
+	\frac{dp_\alpha}{dr} = qF_{\alpha\beta}\frac{dx^\beta}{dr};\\
+	dr = \sqrt{1-v^2}dt = \frac{dt}{\gamma} \rightarrow \gamma\frac{dp_\alpha}{dt} = qF_{\alpha\beta}\gamma\frac{dx^\beta}{dt} \rightarrow \frac{dp_\alpha}{dt} = qF_{\alpha\beta}\frac{dx^\beta}{dt};\\
+	\frac{d}{dt}\left(\begin{matrix}-\mathcal E\\ p_x\\p_y\\p_z\end{matrix}\right) = 
+	q\left(\begin{matrix}
+		0&-E_x&-E_y&-E_z\\
+		E_x&0&B_z&-B_y\\
+		E_y&-B_z&0&B_x\\
+		E_z&B_y&-B_x&0
+	\end{matrix}\right)\left(\begin{matrix}1\\v_x\\v_y\\v_z\end{matrix}\right)
+\end{gather*}
+или:
+\begin{gather*}
+	\frac{d\mathcal E}{dt} = q\vec E\cdot \vec v\\
+	\frac{d\vec p}{dt} = q\vec E + q\vec v \times \vec B (\text{Сила Лоренца})
+\end{gather*}
+
+\textbf{Система уравнений Максвелла-Лоренца в вакууме}\\
+
+\begin{gather*}
+	H = rot A, \quad E = -\frac{1}{c}\frac{\partial A}{\partial t} - grad \varphi,
+\end{gather*}
+где $H$ - напряжённость магнитного поля, $E$ - напряжённость электрического поля,
+$A$ - векторный потенциал поля,
+$\varphi$ - скалярный потенциал.
+
+Определим $rot E$:
+\begin{gather*}
+	rot E = -\frac{1}{c}\frac{\partial}{\partial t}rot A - rot grad \varphi.
+\end{gather*}
+
+Ротор градиента равен нулю.
+\begin{gather}
+	\llabel{e-02-rotE}
+	rot E = -\frac{1}{c}\frac{\partial H}{\partial t}.
+\end{gather}
+
+Возьмём дивергенцию от обеих частей уравнения $rot A = H$ (дивергенция ротора равна нулю):
+\begin{gather}
+	\llabel{e-02-divH}
+	div H = 0
+\end{gather}
+
+Уравнения $\lref{e-02-rotE}$ и  $\lref{e-02-divH}$ составляют первую пару уравнений Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Edl = \frac{1}{c}\frac{\partial}{\partial t}\int Hdf,\\
+	\oint H df = 0.
+\end{gather*}
+
+Для вывода второй пары уравнений Максвелла нам нужно знать, что действие:
+\begin{gather}
+	\llabel{e-02-S}
+	S = -\sum\int mcds - \frac{1}{c^2}\int A_ij^id\Omega - \frac{1}{16\pi c}\int F_{ik}F^{ik}d\Omega.
+\end{gather}
+
+При нахождении уравнений поля их принципа наименьшего действия мы должны считать заданным движения зарядов и должны варьировать только потенциалы поля(играющие здесь роль "координат" системы); при нахождении уравнений движения мы, наоборот, считали поле заданным и варьировали траекторию частицы.
+Поэтому вариация первого члена в $\lref{e-02-S}$ равна теперь нулю, а во втором не должен варьироваться ток $j^i$. Таким образом, 
+\begin{gather*}
+	\delta S = -\frac{1}{c}\big[\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\delta F_{ik}\big]d\Omega = 0
+\end{gather*}
+(при варьировании во втором члене учтено, что $F^{ik}\delta F_{ik} \equiv F_{ik}\delta F^{ik}$). Подставляя
+\begin{gather*}
+	F_{ik} = \frac{\partial A_k}{\partial x^i} - \frac{\partial A_i}{\partial x^k},
+\end{gather*}
+имеем:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int \big\{\frac{1}{c}j^i\delta A_i + \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^i}\delta A_k - \frac{1}{8\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Во втором члене меняем местами индексы $i$ и $k$, по которым производится суммирование, и, кроме того, заменяем $F_{ki}$ на $-F_{ik}$.\\
+Тогда мы получим:
+\begin{gather*}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i\delta A_i - \frac{1}{4\pi}F^{ik}\frac{\partial}{\partial x^k}\delta A_i\big\}d\Omega.
+\end{gather*}
+Второй из этих интегралов берём по частям, т.е. применяем теорему Гаусса:
+\begin{gather}
+	\llabel{e-02-deltaS}
+	\delta S = -\frac{1}{c}\int\big\{\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k}\big\}\delta A_id\Omega - \frac{1}{4\pi c}\int F^{ik}\delta A_idS_k\big|.
+\end{gather}
+Во втором члене  мы должны взять его значение на пределах интегрирования. Пределами интегрирования по координатам является бесконечность, где поле исчезает. На пределах же интегрирования по времени, т.е. в заданные начальный и конечный моменты времени, вариация потенциалов равна нулю, так как по смыслу принципа наименьшего действия потенциалы в эти моменты заданы. Таким образом, второй член в $\lref{e-02-deltaS}$ равен нулю, и мы находим:
+\begin{gather*}
+	\int(\frac{1}{c}j^i + \frac{1}{4\pi}\frac{\partial F^{ik}}{\partial x^k})\delta A_id\Omega = 0.
+\end{gather*}
+Ввиду того, что по смыслу принципа наименьшего действия вариации $\delta A_i$ произвольны, нулю должен равняться коэффициент при $\delta A_i$, т.е.
+\begin{gather}
+	\llabel{e-02-deltaF}
+	\frac{\partial F^{ik}}{\partial x^k} = -\frac{4\pi}{c}j^i.
+\end{gather}
+Перепишем эти четыре ($i = 0, 1, 2, 3$) уравнения в трёхмерной форме. При $i=1$ имеем:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial F^{10}}{\partial t} + \frac{\partial F^{11}}{\partial x} + \frac{\partial F^{12}}{\partial y} + \frac{\partial F^{13}}{\partial z} = -\frac{4\pi}{c}j^1.
+\end{gather*}
+Подставляя значения составляющих тензора $F^{ik}$, находим:
+\begin{gather*}
+	\frac{1}{c}\frac{\partial E_x}{\partial t} - \frac{\partial H_z}{\partial y} + \frac{\partial H_y}{\partial z} = -\frac{4\pi}{c}j_x.
+\end{gather*}
+Вместе с двумя следующими $(i = 2, 3)$ уравнениями они могут быть записаны как одно векторное:
+\begin{gather}
+	\llabel{e-02-rotH}
+	rot H = \frac{1}{c}\frac{\partial E}{\partial t} + \frac{4\pi}{c}j.
+\end{gather}
+Наконец, уравнение с $i=0$ даёт:
+\begin{gather}
+	\llabel{e-02-divE}
+	div E = 4\pi\rho.
+\end{gather}
+Уравнения $\lref{e-02-rotH}$ и $\lref{e-02-divE}$ и составляют вторую пару уравнения Максвелла.\\
+В интегральной форме:\\
+\begin{gather*}
+	\oint Hdl = \frac{1}{c}\frac{\partial}{\partial t}\int Edf + \frac{4\pi}{c}\int jdf,\\
+	\oint Edf = 4\pi\int \rho dV.
+\end{gather*}
+Уравнения Максвелла являются основными уравнениями электродинамики.\\
 \end{document}
