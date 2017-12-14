@@ -13,7 +13,9 @@
 	$$\vec{j}=\frac{di}{dS}$$
 \end{definition}
 Ландау говорит, что эта формула лучше:
-$$\vec{j}=σ*\vec{E}$$,
+$$
+\vec{j}=σ*\vec{E},
+$$
 $σ$- коэффициент электропроводности\ проводимость тела
 
 \textbf{4-вектор плотности тока}\\
@@ -26,10 +28,22 @@ $σ$- коэффициент электропроводности\ провод�
 	$j^\mu_{(x)}\equiv \left(\rho(t, \vec x), \vec j(t, \vec x) \right)$ есть 4-вектор.
 \end{statement}
 \begin{proof}
-	\begin{gather*}
-		j^\mu_{(x)} = \sum_a q_a \frac{dx_a^\mu}{dt} \delta(\vec x - \vec x_a(t)) = \sum_a q_a \frac{dx_a^\mu}{dr_a} \frac{dr_a}{dt}\delta(\vec x - \vec x_a(t)) = \sum_a q_a \int dr \frac{dx_a^\mu}{dr}\frac{\delta (r - r_a)}{\left(\frac{dt}{dr}\right)_{r=r_a}}\delta(\vec x - \vec x_a(r)) = \\
-		= \sum_a q_a \int dx_a^\mu \delta(x - x_a(r))
-	\end{gather*}
+	\begin{flalign}
+	\begin{split}
+		&
+		j^\mu_{(x)}
+		=
+		\sum_a q_a \frac{dx_a^\mu}{dt} \delta(\vec x - \vec x_a(t))
+		=\\
+		=&
+		\sum_a q_a \frac{dx_a^\mu}{dr_a} \frac{dr_a}{dt}\delta(\vec x - \vec x_a(t))
+		=
+		\sum_a q_a \int dr \frac{dx_a^\mu}{dr}\frac{\delta (r - r_a)}{\left(\frac{dt}{dr}\right)_{r=r_a}}\delta(\vec x - \vec x_a(r))
+		=\\
+		=&
+		\sum_a q_a \int dx_a^\mu \delta(x - x_a(r))
+	\end{split}
+	\end{flalign}
 	$x^\mu_a$ - 4-вектор, $\delta(x - x_a(r))$ - Лоренцев скаляр $\rightarrow j^\mu_{(x)}$ - 4-х вектор.\\
 \end{proof}
 
